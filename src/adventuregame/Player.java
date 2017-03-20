@@ -23,7 +23,7 @@ public class Player
         this.hp = hp;
     }
     
-    public void getPosition(String position)
+    public void getPositionSplit(String position)
     {
         String[] positions = position.split(".");
         int xPosition = Integer.parseInt(positions[0]);
@@ -31,6 +31,12 @@ public class Player
         this.xPosition = xPosition;
         this.yPosition = yPosition;
     }
+    
+    public String getPosition()
+    {
+        return position;
+    }
+    
     public void setPosition()
     {
         position = xPosition +"."+yPosition;

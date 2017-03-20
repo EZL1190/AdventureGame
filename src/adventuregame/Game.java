@@ -6,6 +6,7 @@ import java.util.HashMap;
 public class Game 
 {
     boolean gameRunning;
+    Player player = new Player();
     HashMap<String, Floor> floors = new HashMap<String, Floor>();
     
     public void Start()
@@ -27,7 +28,7 @@ public class Game
         
         while(gameRunning)
         {
-            
+            Floor floor = floors.get(player.getPosition());
         }
     }
 }
