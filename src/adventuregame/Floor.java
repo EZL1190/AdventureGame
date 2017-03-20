@@ -37,5 +37,9 @@ public class Floor {
     public boolean isEastExist() {return eastExist;}
 
     public boolean isSouthExist() {return southExist;}
+
+    public String getDescription() {
+        return description;
+    }
     
 }

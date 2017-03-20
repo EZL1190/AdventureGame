@@ -11,5 +11,8 @@ public class Output
         System.out.println("As you might have figured out, sometimes you're not able to go a certain direction, try another and see where that might take you.");
     }
     
-    
+    public void floorDescription(Floor floor)
+    {
+        System.out.println(floor.getDescription());
+    }
 }
