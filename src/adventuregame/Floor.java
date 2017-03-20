@@ -29,5 +29,13 @@ public class Floor {
         this.southExist = southExist;
         this.description = description;
     }
+
+    public boolean isNorthExist() {return northExist;}
+
+    public boolean isWestExist() {return westExist;}
+
+    public boolean isEastExist() {return eastExist;}
+
+    public boolean isSouthExist() {return southExist;}
     
 }
