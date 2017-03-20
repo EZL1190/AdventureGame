@@ -48,7 +48,7 @@ public class Player
             System.out.println("Error invalid move.");
         }
     }
-    public void m_east(Floor floor, Player player)
+    public void m_East(Floor floor, Player player)
     {
         if(floor.isEastExist())
         {
