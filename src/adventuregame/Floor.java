@@ -8,8 +8,9 @@ public class Floor {
     private boolean westExist;
     private boolean eastExist;
     private boolean southExist;
+    private String description;
     
-    Floor(int gold, boolean chest, boolean northExist, boolean westExist, boolean eastExist, boolean southExist)
+    Floor(int gold, boolean chest, boolean northExist, boolean westExist, boolean eastExist, boolean southExist, String description)
     {
         this.gold = gold;
         this.chest = chest;
@@ -17,6 +18,7 @@ public class Floor {
         this.westExist = westExist;
         this.eastExist = eastExist;
         this.southExist = southExist;
+        this.description = description;
     }
     
 }
