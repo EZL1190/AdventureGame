@@ -2,7 +2,14 @@ package adventuregame;
 
 public class Floor {
     private int gold;
-    private String room;
+    /**
+     * Horizontal placement
+     */
+    int x;
+    /** 
+     * Vertical placement
+     */
+    int y;
     private boolean chest;
     private boolean northExist;
     private boolean westExist;
@@ -10,9 +17,11 @@ public class Floor {
     private boolean southExist;
     private String description;
     
-    Floor(int gold, boolean chest, boolean northExist, boolean westExist, boolean eastExist, boolean southExist, String description)
+    Floor(int gold, int x, int y, boolean chest, boolean northExist, boolean westExist, boolean eastExist, boolean southExist, String description)
     {
         this.gold = gold;
+        this.x = x;
+        this.y = y;
         this.chest = chest;
         this.northExist = northExist;
         this.westExist = westExist;
