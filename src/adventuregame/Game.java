@@ -14,7 +14,7 @@ public class Game
     {
         
         gameRunning = true;
-        floors.put("0.0", new Floor(5, 0, 0, false, true, true, true, false, 
+        floors.put("0.0", new Floor(5, 0, 0, false, true, false, false, false, 
                 "Name: Start room\n"
                 + "You’re standing in a bright hallway, and the door behind you just closed.\n"
                 + "You’ve tried to open it, but it’s stuck. There’s only one thing to do, you must proceed forward.\n"
