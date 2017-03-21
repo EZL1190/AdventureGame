@@ -45,24 +45,31 @@ public class Output
         switch(input)
         {
             case"quit":
+                quit();
                 break;
                 
             case"help":
+                Help();
                 break;
                 
             case"gold":
+                gold();
                 break;
                 
-            case"norht":
+            case"north":
+                north();
                 break;
                 
             case"west":
+                west();
                 break;
                 
             case"south":
+                south();
                 break;
                 
             case"east":
+                east();
                 break;
                 
             default:
