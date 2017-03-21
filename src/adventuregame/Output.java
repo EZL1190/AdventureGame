@@ -94,6 +94,8 @@ public class Output
     
     public void quit() 
     {
+        System.out.println("I guess you were too scared to make your way through this amazing maze, I guess it was all to much for a weak spirit like you.\n"
+                + "I never really expected you to enter the door anyways, I was surprised to see a pleb like you enter this wonderful game.");;
         game.gameRunning = false;
     }
     public void west(Floor floor) 

@@ -90,11 +90,10 @@ public class Game
                 "Hint: It is… Go there right now."
         ));
         floors.put("1.3", new Floor(12, 1, 3, true, false, true, false, true, 
-                "Name: Childhood home\n" 
-                + "In some weird way, you’ve ended up in your childhood home, this place is filled with memories.\n"
-                + "I’m sure you know your way around this place better than I do.\n"
-                + "Have a look around and see if you can find any valuables to help you along the way of this impressive maze.\n" +
-                "Got it? Nice, let’s move along."
+                "Name: The great hall of memes\n" +
+"Congratulations dear traveler, you’ve now made your way to the end of this amazing maze..\n"
+                        + "Sounds like amazing graze doesn’t it? Anyhow, you’ve been rewarded for your endurance and great spirit.\n"
+                        + "We would like to give you some kind of token of appreciation, but all we got is gold so here you go."
         ));
         
         
@@ -105,7 +104,6 @@ public class Game
             if(floor.hasChest())
             {
                 gameRunning = false;
-                System.out.println("You won!");
                 continue;
             }
             floor.giveGold(player);
