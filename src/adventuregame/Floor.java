@@ -41,5 +41,10 @@ public class Floor {
     public String getDescription() {
         return description;
     }
+    public void giveGold(Player player)
+    {
+        player.setGold(gold);
+        
+    }
     
 }
