@@ -12,7 +12,7 @@ public class Output
         this.game = game;
     }
 
-    public void setPlayer(Player player) {
+    public void setPlayer(Player player) {  
         this.player = player;
     }
      
@@ -32,13 +32,13 @@ public class Output
     {
         System.out.println("\nYou can go: ");
         if(floor.isNorthExist())
-            System.out.println("-North");
+            System.out.println((char)27 + "[32m-North");
         if(floor.isWestExist())
-            System.out.println("-West");
+            System.out.println((char)27 + "[32m-West");
         if(floor.isEastExist())
-            System.out.println("-East");
+            System.out.println((char)27 + "[32m-East");
         if(floor.isSouthExist())
-            System.out.println("-South");
+            System.out.println((char)27 + "[32m-South");
     }
     
     public void playerInput(Floor floor)
@@ -123,7 +123,7 @@ public class Output
     }
     public void gold() 
     {
-        System.out.println("Gold:" + player.getGold());
+        System.out.println((char)27 + "[33mGold:" + player.getGold());
     }
     public void error()
     {
