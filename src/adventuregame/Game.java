@@ -14,10 +14,10 @@ public class Game
         
         gameRunning = true;
         floors.put("0.0", new Floor(5, 0, 0, false, true, true, true, false, 
-                "Name: Start room\n" +
-"You’re standing in a bright hallway, and the door behind you just closed.\n"
-                        + " You’ve tried to open it, but it’s stuck. There’s only one thing to do, you must proceed forward.\n"
-                        + " Unless you’re a pussy, then there’s a vent up to the left, just type ‘quit’ and get out of this badass dungeon."
+                "Name: Start room\n"
+                + "You’re standing in a bright hallway, and the door behind you just closed.\n"
+                + " You’ve tried to open it, but it’s stuck. There’s only one thing to do, you must proceed forward.\n"
+                + " Unless you’re a pussy, then there’s a vent up to the left, just type ‘quit’ and get out of this badass dungeon."
         ));
         floors.put("1.0", new Floor(0, 1, 0, false, true, false, true, false, ""));
         floors.put("2.0", new Floor(15, 2, 0, false, true, true, false, false, ""));
