@@ -112,6 +112,11 @@ public class Output
     {
         
     }
+    public void error()
+    {
+        
+        System.out.println("Invalid move.");
+    }
 }
 
 
