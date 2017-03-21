@@ -42,7 +42,7 @@ public class Player
         position = xPosition +"."+yPosition;
     }
     
-    public void m_North(Floor floor, Player player)
+    public void m_North(Floor floor)
     {
         if(floor.isNorthExist())
         {
@@ -54,7 +54,7 @@ public class Player
             System.out.println("Error invalid move.");
         }
     }
-    public void m_East(Floor floor, Player player)
+    public void m_East(Floor floor)
     {
         if(floor.isEastExist())
         {
@@ -66,7 +66,7 @@ public class Player
             System.out.println("Error invalid move.");
         }
     }
-    public void m_South(Floor floor, Player player)
+    public void m_South(Floor floor)
     {
         if(floor.isSouthExist())
         {
@@ -78,7 +78,7 @@ public class Player
             System.out.println("Error invalid move.");
         }
     }
-    public void m_West(Floor floor, Player player)
+    public void m_West(Floor floor)
     {
         if(floor.isWestExist())
         {

@@ -12,6 +12,8 @@ public class Game
     
     public void Start()
     {
+        output.setGame(this);
+        output.setPlayer(player);
         
         gameRunning = true;
         floors.put("0.0", new Floor(5, 0, 0, false, true, false, false, false, 
@@ -102,7 +104,7 @@ public class Game
             Floor floor = floors.get(player.getPosition());
             output.floorDescription(floor);
             output.waysToGo(floor);
-            output.playerInput();
+            output.playerInput(floor);
         }
     }
 }
