@@ -15,4 +15,25 @@ public class Output
     {
         System.out.println(floor.getDescription());
     }
+    public void quit() {
+        
+    }
+    public void west() {
+        
+    }
+    public void east() {
+        
+    }
+    public void south() {
+        
+    }
+    public void north() {
+        
+    }
+    public void gold() {
+        
+    }
 }
+
+
+
