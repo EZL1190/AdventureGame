@@ -1,7 +1,10 @@
 package adventuregame;
 
+import java.util.Scanner;
+
 public class Output 
 {
+    Scanner userInput = new Scanner(System.in);
     public void Help() 
     {
         System.out.println("You've asked for help, these are all the commands in the game:");
@@ -15,6 +18,58 @@ public class Output
     {
         System.out.println(floor.getDescription());
     }
+    
+    public void waysToGo(Floor floor)
+    {
+        System.out.println("You can go: ");
+        if(floor.isNorthExist())
+            System.out.println("-North");
+        if(floor.isWestExist())
+            System.out.println("-West");
+        if(floor.isSouthExist())
+            System.out.println("-South");
+        if(floor.isEastExist())
+            System.out.println("-East");
+    }
+    
+    public void playerInput()
+    {
+        System.out.println("\nEnter command: ");
+        String input = userInput.nextLine();
+        commands(input);
+    }
+    
+    public void commands(String input)
+    {
+        input = input.toLowerCase();
+        switch(input)
+        {
+            case"quit":
+                break;
+                
+            case"help":
+                break;
+                
+            case"gold":
+                break;
+                
+            case"norht":
+                break;
+                
+            case"west":
+                break;
+                
+            case"south":
+                break;
+                
+            case"east":
+                break;
+                
+            default:
+                break;
+        }
+    }
+    
     public void quit() {
         
     }
