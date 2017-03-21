@@ -21,7 +21,7 @@ public class Output
     
     public void waysToGo(Floor floor)
     {
-        System.out.println("You can go: ");
+        System.out.println("\nYou can go: ");
         if(floor.isNorthExist())
             System.out.println("-North");
         if(floor.isWestExist())
