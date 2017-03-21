@@ -21,6 +21,13 @@ public class Output
         System.out.println(floor.getDescription());
     }
     
+    public void loot(Floor floor)
+    {
+        System.out.println("\nYou have looted " + floor.getGold() + " gold from this room");
+        int gold = floor.getGold() + player.getGold();
+        System.out.println("You have " + gold + " gold in total\n");
+    }
+    
     public void waysToGo(Floor floor)
     {
         System.out.println("\nYou can go: ");

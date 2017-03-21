@@ -51,5 +51,9 @@ public class Floor {
             return true;
         return false;
     }
+
+    public int getGold() {
+        return gold;
+    }
     
 }

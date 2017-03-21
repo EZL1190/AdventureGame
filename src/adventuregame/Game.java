@@ -106,6 +106,7 @@ public class Game
                 gameRunning = false;
                 continue;
             }
+            output.loot(floor);
             floor.giveGold(player);
             output.floorDescription(floor);
             output.waysToGo(floor);
