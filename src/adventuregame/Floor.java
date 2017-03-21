@@ -43,8 +43,13 @@ public class Floor {
     }
     public void giveGold(Player player)
     {
-        player.setGold(gold);
-        
+        player.setGold(gold + player.getGold());
+    }
+    public boolean hasChest()
+    {
+        if(chest == true)
+            return true;
+        return false;
     }
     
 }

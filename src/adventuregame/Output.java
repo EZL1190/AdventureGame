@@ -28,10 +28,10 @@ public class Output
             System.out.println("-North");
         if(floor.isWestExist())
             System.out.println("-West");
-        if(floor.isSouthExist())
-            System.out.println("-South");
         if(floor.isEastExist())
             System.out.println("-East");
+        if(floor.isSouthExist())
+            System.out.println("-South");
     }
     
     public void playerInput(Floor floor)
@@ -52,10 +52,12 @@ public class Output
                 
             case"help":
                 Help();
+                playerInput(floor);
                 break;
                 
             case"gold":
                 gold();
+                playerInput(floor);
                 break;
                 
             case"north":
@@ -75,6 +77,8 @@ public class Output
                 break;
                 
             default:
+                System.out.println("Invalid command");
+                playerInput(floor);
                 break;
         }
     }
@@ -90,7 +94,7 @@ public class Output
     
     public void quit() 
     {
-        
+        game.gameRunning = false;
     }
     public void west(Floor floor) 
     {
@@ -98,23 +102,22 @@ public class Output
     }
     public void east(Floor floor) 
     {
-        
+        player.m_East(floor);
     }
     public void south(Floor floor) 
     {
-        
+        player.m_South(floor);
     }
     public void north(Floor floor) 
     {
-        
+        player.m_North(floor);
     }
     public void gold() 
     {
-        
+        System.out.println("Gold:" + player.getGold());
     }
     public void error()
     {
-        
         System.out.println("Invalid move.");
     }
 }
