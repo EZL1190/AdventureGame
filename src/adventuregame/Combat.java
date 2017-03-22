@@ -29,8 +29,7 @@ public class Combat {
     
     public void enemyAttack(Player player, Enemy enemy)
     {
-        player.setHp(playe
-r.getHp()-enemy.getDamage());
+        player.setHp(player.getHp()-enemy.getDamage());
         
     }
         public void firstHit(Player player)
