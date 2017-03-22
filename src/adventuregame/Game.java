@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class Game 
 {
     boolean gameRunning;
-    Player player = new Player("player", 10, 2);
+    Player player = new Player("player", 10, 2, new Equipment("Rusty", "weapon", 2, 0, "", 0, 0, false));
     HashMap<String, Floor> floors = new HashMap<String, Floor>();
     Output output = new Output();
     Combat combat = new Combat();
@@ -111,6 +111,8 @@ public class Game
                 continue;
             }
             
+            output.floorDescription(floor);
+            
             if(floor.gethasEnemy())
             {
                 combat.firstHit(player);
@@ -119,7 +121,6 @@ public class Game
             
             output.loot(floor);
             floor.giveGold(player);
-            output.floorDescription(floor);
             output.waysToGo(floor);
             output.playerInput(floor);
         }
