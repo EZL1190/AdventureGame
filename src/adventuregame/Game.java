@@ -9,6 +9,7 @@ public class Game
     Player player = new Player("player", 10, 2);
     HashMap<String, Floor> floors = new HashMap<String, Floor>();
     Output output = new Output();
+    Combat combat = new Combat();
     
     public void Start()
     {
@@ -23,13 +24,15 @@ public class Game
                 + "Unless you’re a pussy, then there’s a vent up to the left, just type ‘quit’ and get out of this badass dungeon."
         ));
         
-        floors.put("-1.1", new Floor(0, -1, 1, false, true, false, true, false, false,
+        floors.put("-1.1", new Floor(0, -1, 1, false, true, false, true, false, true,
                 "Name: Ham room\n"
                 + "The room you just entered is freezing cold and there’s a weird smell. The floor is wet and the walls are covered in blue tiles.\n"
                 + "As you stare out in the freezing room you see pieces of ham lying around on the floor, that explains the smell and the wet floor.\n"
                 + "As you could imagine there’s no valuables in here, you should consider getting out real fast.\n"
                 + "There’s said to be a curse in this room that might change the way you look."
         ));
+        floors.get("-1.1").setEnemy(new Enemy(20, 5, "Barhhh", ""));
+        
         floors.put("0.1", new Floor(5, 0, 1, false, true, true, true, false, false,
                 "Name: Lord von Apache’s treasure room\n"
                 + "This is the room of Lord von Apache, what you see here is the remains of him, there wasn’t a lot but it’s a start.\n"
@@ -107,15 +110,11 @@ public class Game
                 output.floorDescription(floor);
                 continue;
             }
-            if(player.getHp() <= 0)
-            {
-                // gameOver text
-                gameRunning = false;
-                continue;
-            }
+            
             if(floor.gethasEnemy())
             {
-                // combat
+                combat.firstHit(player);
+                output.combat("", player.getWeapon(), combat, player, floor.getEnemy(), player.getInventory());
             }
             
             output.loot(floor);

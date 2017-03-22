@@ -122,4 +122,14 @@ public class Player
         this.weapon = weapon;
     }
     
+    public Inventory getInventory()
+    {
+        return inventory;
+    }
+    
+    public Equipment getWeapon()
+    {
+        return weapon;
+    }
+    
 }

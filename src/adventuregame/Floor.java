@@ -15,12 +15,12 @@ public class Floor {
     private boolean westExist;
     private boolean eastExist;
     private boolean southExist;
-    
     private boolean hasEnemy;
     private String description;
     private boolean hasEquipment;
     private boolean hasItem;
     private Equipment equipment;
+    private Enemy enemy;
     private Item item;
     
     Floor(int gold, int x, int y, boolean chest, boolean northExist, boolean westExist, boolean eastExist, boolean southExist, boolean hasEnemy, String description)
@@ -78,5 +78,14 @@ public class Floor {
         }
     }
     
+    public void setEnemy(Enemy enemy)
+    {
+        this.enemy = enemy;
+    }
+    
+    public Enemy getEnemy()
+    {
+        return enemy;
+    }
        
 }
