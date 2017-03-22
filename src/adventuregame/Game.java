@@ -90,10 +90,10 @@ public class Game
                 "Hint: It is… Go there right now."
         ));
         floors.put("1.3", new Floor(12, 1, 3, true, false, true, false, true, false,
-                "Name: The great hall of memes\n" +
-"Congratulations dear traveler, you’ve now made your way to the end of this amazing maze..\n"
-                        + "Sounds like amazing graze doesn’t it? Anyhow, you’ve been rewarded for your endurance and great spirit.\n"
-                        + "We would like to give you some kind of token of appreciation, but all we got is gold so here you go."
+                "Name: The great hall of memes\n"
+                + "Congratulations dear traveler, you’ve now made your way to the end of this amazing maze..\n"
+                + "Sounds like amazing graze doesn’t it? Anyhow, you’ve been rewarded for your endurance and great spirit.\n"
+                + "We would like to give you some kind of token of appreciation, but all we got is gold so here you go."
         ));
         
         
@@ -113,6 +113,11 @@ public class Game
                 gameRunning = false;
                 continue;
             }
+            if(floor.gethasEnemy())
+            {
+                // combat
+            }
+            
             output.loot(floor);
             floor.giveGold(player);
             output.floorDescription(floor);

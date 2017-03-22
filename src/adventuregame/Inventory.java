@@ -1,29 +1,30 @@
 package adventuregame;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+
 
 public class Inventory {
-    HashMap<String, Equipment> equipment = new HashMap<String, Equipment>();
-    HashMap<String, Item> item = new HashMap<String, Item>();
+    private ArrayList<Equipment> equipment = new ArrayList<Equipment>();
+    private ArrayList<Item> item = new ArrayList<Item>();
     
     public void setEquipment(String name, Equipment equ)
     {
-        this.equipment.put(name, equ);
+        equipment.add(equ);
     }
     
     public void setItem(String name, Item item)
     {
-        this.item.put(name, item);
+        this.item.add(item);
     }
     
-    public Equipment getEquipment(String name)
+    public Equipment getEquipment(int n)
     {
-        return this.equipment.get(name);
+        return equipment.get(n);
     }
     
-    public Item getItem(String name)
+    public Item getItem(int n)
     {
-        return this.item.get(name);
+        return item.get(n);
     }
     
     
