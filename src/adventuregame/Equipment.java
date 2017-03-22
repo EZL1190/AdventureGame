@@ -8,7 +8,22 @@ public class Equipment {
     private boolean hasSpell;
     private String spellName;
     private boolean isAvailable;
+    private double spellCd;
+    private int spellDmg;
+    private String type;
 
+    public Equipment(String name, String type, int dmg, int hp, String spellName, double spellCd, int spellDmg, boolean hasSpell) 
+    {
+        this.name = name;
+        this.type = type;
+        this.dmg = dmg;
+        this.hp = hp;
+        this.spellName = spellName;
+        this.spellCd = spellCd;
+        this.spellDmg = spellDmg;
+        this.hasSpell = hasSpell;
+    }
+    
     public boolean isHasSpell() {
         return hasSpell;
     }
@@ -23,21 +38,6 @@ public class Equipment {
 
     public void setIsAvailable(boolean isAvailable) {
         this.isAvailable = isAvailable;
-    }
-    private double spellCd;
-    private int spellDmg;
-    private String type;
-
-    public Equipment(String name, String type, int dmg, int hp, boolean active, String spellName, double spellCd, int spellDmg) 
-    {
-        this.name = name;
-        this.dmg = dmg;
-        this.hp = hp;
-        this.active = active;
-        this.spellName = spellName;
-        this.spellCd = spellCd;
-        this.spellDmg = spellDmg;
-        this.type = type;
     }
     
     public String getName()
