@@ -32,7 +32,7 @@ public class Combat {
         player.setHp(player.getHp()-enemy.getDamage());
         
     }
-        public void firstHit(Player player)
+    public void firstHit(Player player)
     {
         Random rand = new Random();
         int firsthit = rand.nextInt(100)+1;

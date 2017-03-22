@@ -11,11 +11,12 @@ public class Player
     private Inventory inventory = new Inventory();
     private Equipment weapon;
     
-    Player(String name, int hp, int dmg)
+    Player(String name, int hp, int dmg, Equipment weapon)
     {
         this.name = name;
         this.hp = hp;
         this.dmg = dmg;
+        this.weapon = weapon;
     }
 
     public String getName() {
