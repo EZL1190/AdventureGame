@@ -152,7 +152,11 @@ public class Output
                 break;
                 
             case "2":
+                if(equipment.isHasSpell())
                 combat.fight(player, enemy);
+                
+                if(!equipment.isHasSpell())
+                    System.out.println("Invalid move");
                 break;
                 
             case "3":
