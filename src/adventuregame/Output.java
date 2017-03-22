@@ -183,6 +183,8 @@ public class Output {
     }
 
     public void itemMenu(Inventory inventory) {
+        
+        //placeholder
         System.out.println("Inventory slot 1");
         System.out.println("Inventory slot 2");
         System.out.println("Inventory slot 3");
