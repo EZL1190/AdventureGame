@@ -60,10 +60,14 @@ public class Floor {
         return gold;
     }
     
+    
     public void getItem(Player player)
     {
-        player.addItem(equipment);
-        hasEquipment = false;
+        if(hasEquipment)
+        {
+            player.addItem(equipment);
+            hasEquipment = false;
+        }
     }
     
 }
