@@ -129,6 +129,51 @@ public class Output
     {
         System.out.println("Invalid move.");
     }
+    
+    public void combat(String input, Equipment equipment, Combat combat, Player player, Enemy enemy, Inventory inventory)
+    {
+        System.out.println("You've engaged an enemy!\nWhat would you like to do?");
+        System.out.println((char)27 + "[32m1; Attack!");
+        
+        if(equipment.isHasSpell())        
+        System.out.println((char)27 + "[32m2; Use spell");
+        
+        if(!equipment.isHasSpell())
+        System.out.println((char)27 + "[31m2; Use spell");
+        
+        System.out.println("3; Use item");
+        
+        input = userInput.nextLine();
+        
+        switch(input)
+        {
+            case "1":
+                combat.fight(player, enemy);
+                break;
+                
+            case "2":
+                combat.fight(player, enemy);
+                break;
+                
+            case "3":
+                itemMenu(inventory);
+                break;
+                
+            default:
+                System.out.println("Invalid selection");
+                combat(input, equipment, combat, player, enemy, inventory);
+                break;
+            
+        }  
+    }
+    
+    public void itemMenu(Inventory inventory)
+    {
+        System.out.println("Inventory slot 1");
+        System.out.println("Inventory slot 2");
+        System.out.println("Inventory slot 3");
+        
+    }
 }
 
 
