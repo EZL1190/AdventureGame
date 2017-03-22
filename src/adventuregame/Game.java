@@ -16,26 +16,26 @@ public class Game
         output.setPlayer(player);
         
         gameRunning = true;
-        floors.put("0.0", new Floor(0, 0, 0, false, true, false, false, false, 
+        floors.put("0.0", new Floor(0, 0, 0, false, true, false, false, false, false,
                 "Name: Start room\n"
                 + "You’re standing in a bright hallway, and the door behind you just closed.\n"
                 + "You’ve tried to open it, but it’s stuck. There’s only one thing to do, you must proceed forward.\n"
                 + "Unless you’re a pussy, then there’s a vent up to the left, just type ‘quit’ and get out of this badass dungeon."
         ));
         
-        floors.put("-1.1", new Floor(0, -1, 1, false, true, false, true, false, 
+        floors.put("-1.1", new Floor(0, -1, 1, false, true, false, true, false, false,
                 "Name: Ham room\n"
                 + "The room you just entered is freezing cold and there’s a weird smell. The floor is wet and the walls are covered in blue tiles.\n"
                 + "As you stare out in the freezing room you see pieces of ham lying around on the floor, that explains the smell and the wet floor.\n"
                 + "As you could imagine there’s no valuables in here, you should consider getting out real fast.\n"
                 + "There’s said to be a curse in this room that might change the way you look."
         ));
-        floors.put("0.1", new Floor(5, 0, 1, false, true, true, true, false, 
+        floors.put("0.1", new Floor(5, 0, 1, false, true, true, true, false, false,
                 "Name: Lord von Apache’s treasure room\n"
                 + "This is the room of Lord von Apache, what you see here is the remains of him, there wasn’t a lot but it’s a start.\n"
                 + "The room is grey, with multiple pieces of art around the walls the furniture is covered in white sheets to protect their value. "
         ));
-        floors.put("1.1", new Floor(15, 1, 1, false, true, true, false, false, 
+        floors.put("1.1", new Floor(15, 1, 1, false, true, true, false, false, false,
                 "Name: Watchmaker Hummels’ chamber\n"
                 + "The door is heavy and you’re pushing it with all you’ve got, the door is old and making a lot of noise.\n"
                 + "You’ve finally managed to force the door open, as you go in the door shuts loudly behind you.\n"
@@ -43,14 +43,14 @@ public class Game
                 + "He’s pointing towards the lamp in the left corner of the room. You decide to check the lamp and find a bunch of coins. "
         ));
         
-        floors.put("-1.2", new Floor(13, -1, 2, false, true, false, true, true, 
+        floors.put("-1.2", new Floor(13, -1, 2, false, true, false, true, true, false,
                 "Name: The yard of knowledge\n"
                 + "You’ve found your way outside, you’re now standing in the yard of knowledge, it says that this yard contains all the knowledge of senpai Ronnie.\n"
                 + "Some of the artifacts in this yard contains great power, but with great power comes great responsibility…\n"
                 + "At least that’s what they tell us, you could also just have fun and use the power in whatever way you find appropriate…\n"
                 + "Whatever you want to do."
         ));
-        floors.put("0.2", new Floor(50, 0, 2, false, true, true, true, true, 
+        floors.put("0.2", new Floor(50, 0, 2, false, true, true, true, true, false,
                 "Name: The hiding closet of Lucas Kuhn\n" 
                 + "Go back, hurry it’s a trap. Nah man just kidding, it’s safe in here… Trust me.\n"
                 + "You’re scared now aren’t you?\n" 
@@ -59,7 +59,7 @@ public class Game
                 + "Some people say he was acting as a maniac at day and a pimp at night, if you look closely you might find items of high value.\n"
                 + "This closet has secret exits, try and find your way out before the maniac Kuhn gets back."
         ));
-        floors.put("1.2", new Floor(7, 1, 2, false, true, true, false, true, 
+        floors.put("1.2", new Floor(7, 1, 2, false, true, true, false, true, false,
                 "Name: Hall of ghosts\n" 
                 + "You’ve entered a hall which is completely dark, you’re fumbling your way through the hall and stumbling across some sharp edges, what could this be?\n"
                 + "You decide to back away from the edges, there’s a solid structure behind you.\n"
@@ -70,7 +70,7 @@ public class Game
                 + "This place doesn’t seem to have any valuables, except that small gold bar over there, quickly grab it!"
         ));
         
-        floors.put("-1.3", new Floor(25, -1, 3, false, false, false, true, true, 
+        floors.put("-1.3", new Floor(25, -1, 3, false, false, false, true, true, false,
                 "Name: The room of Migos\n"
                 + "There’s a tune playing, the room is filled with smoke. The rhythm is bad, some might even say boujee.\n"
                 + "You feel dizzy, the smoke is getting to you, this might not be regular smoke.\n"
@@ -79,7 +79,7 @@ public class Game
                 + "You say no thanks but ask them if they have some spare change for hungry traveler.\n"
                 + "Out of context they drop some sweet bars “Raindrops, drop tops”, you leave the room all confused and light headed."
         ));
-        floors.put("0.3", new Floor(69, 0, 3, false, false, true, true, true, 
+        floors.put("0.3", new Floor(69, 0, 3, false, false, true, true, true, false,
                 "Name: The blacksmiths forgery\n"
                 + "This is the forgery of an old blacksmith, his origin remains unknown but he was a hard working fella.\n"
                 + "The room has a nice temperature, heated, maybe there has been someone in here recently.\n"
@@ -89,7 +89,7 @@ public class Game
                 + "The real value of the sword is unknown, but maybe it’s worth a shot visiting the nice shopkeeper?\n" +
                 "Hint: It is… Go there right now."
         ));
-        floors.put("1.3", new Floor(12, 1, 3, true, false, true, false, true, 
+        floors.put("1.3", new Floor(12, 1, 3, true, false, true, false, true, false,
                 "Name: The great hall of memes\n" +
 "Congratulations dear traveler, you’ve now made your way to the end of this amazing maze..\n"
                         + "Sounds like amazing graze doesn’t it? Anyhow, you’ve been rewarded for your endurance and great spirit.\n"

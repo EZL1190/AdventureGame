@@ -9,6 +9,7 @@ public class Player
     private int yPosition;
     private String name;
     private Inventory inventory = new Inventory();
+    private Equipment weapon;
     
     Player(String name, int hp, int dmg)
     {
@@ -114,6 +115,11 @@ public class Player
     {
         
         inventory.setEquipment(equ.getName(), equ);
+    }
+    
+    public void equpipWeapon(Equipment weapon)
+    {
+        this.weapon = weapon;
     }
     
 }
