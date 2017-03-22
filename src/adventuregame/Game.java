@@ -116,6 +116,7 @@ public class Game
             if(floor.gethasEnemy())
             {
                 combat.firstHit(player);
+                output.combatStart();
                 output.combat("", player.getWeapon(), combat, player, floor.getEnemy(), player.getInventory());
             }
             

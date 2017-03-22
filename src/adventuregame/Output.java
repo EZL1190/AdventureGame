@@ -130,9 +130,14 @@ public class Output
         System.out.println("Invalid move.");
     }
     
-    public void combat(String input, Equipment equipment, Combat combat, Player player, Enemy enemy, Inventory inventory)
+    public void combatStart()
     {
         System.out.println("You've engaged an enemy!\nWhat would you like to do?");
+        
+    }
+    public void combat(String input, Equipment equipment, Combat combat, Player player, Enemy enemy, Inventory inventory)
+    {
+        
         System.out.println((char)27 + "[32m1; Attack!");
         
         if(equipment.isHasSpell())        
@@ -157,6 +162,7 @@ public class Output
                 
                 if(!equipment.isHasSpell())
                     System.out.println("Invalid move");
+                    combat(input, equipment, combat, player, enemy, inventory);
                 break;
                 
             case "3":
