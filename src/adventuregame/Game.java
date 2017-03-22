@@ -72,6 +72,7 @@ public class Game
                 + "You hear the sound of an instrument starting to play, a piano to be exact.\n"
                 + "This place doesn’t seem to have any valuables, except that small gold bar over there, quickly grab it!"
         ));
+        floors.get("1.2").setEnemy(new Enemy().spawnEnemy());
         
         floors.put("-1.3", new Floor(25, -1, 3, false, false, true, true, true, true,
                 "Name: The room of Migos\n"
@@ -82,6 +83,7 @@ public class Game
                 + "You say no thanks but ask them if they have some spare change for hungry traveler.\n"
                 + "Out of context they drop some sweet bars “Raindrops, drop tops”, you leave the room all confused and light headed."
         ));
+        floors.get("-1.3").setEnemy(new Enemy().spawnEnemy());
         floors.put("0.3", new Floor(69, 0, 3, false, false, true, false, true, false,
                 "Name: The blacksmiths forgery\n"
                 + "This is the forgery of an old blacksmith, his origin remains unknown but he was a hard working fella.\n"
@@ -106,6 +108,7 @@ public class Game
                         + "What remains of his shop is guarded by those enemies who ruined his beautiful shop.\n"
                         + "The smell is strong, all the different spices combining to make an odor so strong that only Zombies would be able to survive in here." 
         ));
+        floors.get("-2.1").setEnemy(new Enemy().spawnEnemy());
         floors.put("-2.2", new Floor(45, -2, 2, false, true, false, false, true, true,
                 
                 "Name: The programmer’s bungalow\n" +
@@ -114,6 +117,7 @@ public class Game
                         + "Because of their non-stop hard work, these students have become Zombies with an unfulfilled hunger for study points.\n"
                         + "You must give them their well-earned study points, to make it out of this maze." 
         ));
+        floors.get("-2.2").setEnemy(new Enemy().spawnEnemy());
         floors.put("-2.3", new Floor(100, -2, 3, false, false, false, true, true, false,
                 
                 "Name:  The Vosserfall \n" +
@@ -137,6 +141,7 @@ public class Game
                         + "Before Sindragosa will even look upon your weak body, you must defeat her goblin servants first.\n"
                         + "The easiest way to kill them is to use an AoE attack, sadly this game isn’t in that stage yet, so you’ll have to take them out one by one. "
         ));
+        floors.get("-1.4").setEnemy(new Enemy().spawnEnemy());
         floors.put("0.4", new Floor(47, 0, 4, false, false, true, true, false, false,
                 
                 "Name: Lord von Apache’s kitchen\n" +
@@ -150,7 +155,7 @@ public class Game
 "We’re now in her home, look at all these cats, she must be a little lonely huh?\n" +
 "Wait, what the hell is that over there? Is that one of Lucas Kuhn’s tools!" 
         ));
-        
+        floors.get("1.4").setEnemy(new Enemy().spawnEnemy());
         
         
         while(gameRunning)
