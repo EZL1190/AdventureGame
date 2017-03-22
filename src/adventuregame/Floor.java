@@ -63,6 +63,11 @@ public class Floor {
         return gold;
     }
     
+    public boolean gethasEnemy()
+    {
+        return hasEnemy;
+    }
+    
     
     public void getItem(Player player)
     {
