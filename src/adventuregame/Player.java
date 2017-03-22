@@ -3,15 +3,17 @@ public class Player
 {
     private int gold;
     private int hp;
+    private int dmg;
     private String position = "0.0";
     private int xPosition;
     private int yPosition;
     private String name;
     
-    Player(String name, int hp)
+    Player(String name, int hp, int dmg)
     {
         this.name = name;
         this.hp = hp;
+        this.dmg = dmg;
     }
 
     public String getName() {
