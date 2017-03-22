@@ -14,19 +14,27 @@ import java.util.Random;
 public class Enemy {
     Random rand = new Random();
     
-    String[] enemies = { "Skeleton", "Zombie"};
-    int maxEnemyHealth = 25;
-    int enemyAttackDamage = 15; 
+    private int hp;
+    private int damage;
+    private String name;
+    private String[] type = {"Skeleton", "Zombie"};
+    private int maxHp = 25;
+    private int maxDamage = 15;
     
     
-    
+    public Enemy(int hp, int damage, String name, String type) {
+        this.hp = hp;
+        this.damage = damage;
+        this.name = name;
+        //this.type = type;
+    }
     
     public void spawnEnemy()
     {
-        Random rand = new Random();
-        String enemyType = enemies[rand.nextInt(enemies.length)];
-        int enemyHealth = rand.nextInt(maxEnemyHealth)+1;
-        int enemyAttack = rand.nextInt(enemyAttackDamage)+1;
+        this.hp = rand.nextInt(maxHp);
+        this.damage = rand.nextInt(maxDamage);
+        this.name = type[rand.nextInt(type.length)];
+        
     }
     
 }
