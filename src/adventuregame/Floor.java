@@ -51,6 +51,7 @@ public class Floor {
     public void giveGold(Player player)
     {
         player.setGold(gold + player.getGold());
+        gold = 0;
     }
     public boolean hasChest()
     {
