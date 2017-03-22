@@ -104,6 +104,7 @@ public class Game
             if(floor.hasChest())
             {
                 gameRunning = false;
+                output.floorDescription(floor);
                 continue;
             }
             output.loot(floor);
