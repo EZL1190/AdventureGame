@@ -15,13 +15,15 @@ public class Floor {
     private boolean westExist;
     private boolean eastExist;
     private boolean southExist;
+    
+    private boolean hasEnemy;
     private String description;
     private boolean hasEquipment;
     private boolean hasItem;
     private Equipment equipment;
     private Item item;
     
-    Floor(int gold, int x, int y, boolean chest, boolean northExist, boolean westExist, boolean eastExist, boolean southExist, String description)
+    Floor(int gold, int x, int y, boolean chest, boolean northExist, boolean westExist, boolean eastExist, boolean southExist, boolean hasEnemy, String description)
     {
         this.gold = gold;
         this.x = x;
@@ -32,6 +34,7 @@ public class Floor {
         this.eastExist = eastExist;
         this.southExist = southExist;
         this.description = description;
+        this.hasEnemy = hasEnemy;
     }
 
     public boolean isNorthExist() {return northExist;}
@@ -70,4 +73,5 @@ public class Floor {
         }
     }
     
+       
 }

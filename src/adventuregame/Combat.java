@@ -13,6 +13,13 @@ import java.util.Random;
  */
 public class Combat {
     
+    public void fight(Player player, Enemy enemy)
+    {
+        playerAttack(player, enemy);
+        enemyAttack(player, enemy);
+        
+    }
+    
     
     public void playerAttack(Player player, Enemy enemy)
     {
@@ -22,16 +29,17 @@ public class Combat {
     
     public void enemyAttack(Player player, Enemy enemy)
     {
-        player.setHp(player.getHp()-enemy.getDamage());
+        player.setHp(playe
+r.getHp()-enemy.getDamage());
         
     }
-    
-    public boolean firstHit()
+        public void firstHit(Player player)
     {
         Random rand = new Random();
         int firsthit = rand.nextInt(100)+1;
         
-        return firsthit > 90;
+        if(firsthit > 90)
+            player.setHp(player.getHp()-10);
     }
     
     
