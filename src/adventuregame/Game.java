@@ -165,6 +165,7 @@ public class Game
             {
                 gameRunning = false;
                 output.floorDescription(floor);
+                System.out.println("Congratulations once again, you've ended the game with: " + player.getGold() + " gold");
                 continue;
             }
             
