@@ -107,6 +107,12 @@ public class Game
                 output.floorDescription(floor);
                 continue;
             }
+            if(player.getHp() <= 0)
+            {
+                // gameOver text
+                gameRunning = false;
+                continue;
+            }
             output.loot(floor);
             floor.giveGold(player);
             output.floorDescription(floor);

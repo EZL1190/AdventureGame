@@ -29,6 +29,11 @@ public class Player
         this.gold = gold;
     }
 
+    public int getDmg()
+    {
+        return dmg;
+    }
+    
     public int getHp() {
         return hp;
     }
