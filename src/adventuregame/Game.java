@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class Game 
 {
     boolean gameRunning;
-    Player player = new Player("player", 10);
+    Player player = new Player("player", 10, 2);
     HashMap<String, Floor> floors = new HashMap<String, Floor>();
     Output output = new Output();
     
