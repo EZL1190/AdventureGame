@@ -31,7 +31,7 @@ public class Game
                 + "As you could imagine there’s no valuables in here, you should consider getting out real fast.\n"
                 + "There’s said to be a curse in this room that might change the way you look."
         ));
-        floors.get("-1.1").setEnemy(new Enemy(20, 5, "Barhhh", ""));
+        floors.get("-1.1").setEnemy(new Enemy().spawnEnemy());
         
         floors.put("0.1", new Floor(5, 0, 1, false, true, true, true, false, false,
                 "Name: Lord von Apache’s treasure room\n"
@@ -168,7 +168,7 @@ public class Game
             if(floor.gethasEnemy())
             {
                 combat.firstHit(player);
-                output.combatStart();
+                output.combatStart(floor.getEnemy());
                 output.combat("", player.getWeapon(), combat, player, floor.getEnemy(), player.getInventory());
             }
             
