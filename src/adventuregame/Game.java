@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class Game 
 {
     boolean gameRunning;
-    Player player = new Player();
+    Player player = new Player("player", 10);
     HashMap<String, Floor> floors = new HashMap<String, Floor>();
     Output output = new Output();
     
@@ -104,6 +104,7 @@ public class Game
             if(floor.hasChest())
             {
                 gameRunning = false;
+                output.floorDescription(floor);
                 continue;
             }
             output.loot(floor);

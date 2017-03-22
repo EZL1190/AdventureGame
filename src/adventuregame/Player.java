@@ -2,10 +2,21 @@ package adventuregame;
 public class Player 
 {
     private int gold;
-    private int hp = 100;
+    private int hp;
     private String position = "0.0";
     private int xPosition;
     private int yPosition;
+    private String name;
+    
+    Player(String name, int hp)
+    {
+        this.name = name;
+        this.hp = hp;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public int getGold() {
         return gold;
