@@ -1,6 +1,7 @@
 package adventuregame;
 
 public class Equipment {
+    private String name;
     private int dmg;
     private int hp;
     private boolean active;
@@ -8,14 +9,20 @@ public class Equipment {
     private double spellCd;
     private int spellDmg;
 
-    public Equipment(int dmg, int hp, boolean active, String spellName, double spellCd, int spellDmg) 
+    public Equipment(String name, int dmg, int hp, boolean active, String spellName, double spellCd, int spellDmg) 
     {
+        this.name = name;
         this.dmg = dmg;
         this.hp = hp;
         this.active = active;
         this.spellName = spellName;
         this.spellCd = spellCd;
         this.spellDmg = spellDmg;
+    }
+    
+    public String getName()
+    {
+        return name;
     }
 
     public int getDmg() {

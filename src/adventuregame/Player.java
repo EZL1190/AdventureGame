@@ -8,6 +8,7 @@ public class Player
     private int xPosition;
     private int yPosition;
     private String name;
+    private Inventory inventory = new Inventory();
     
     Player(String name, int hp, int dmg)
     {
@@ -28,6 +29,11 @@ public class Player
         this.gold = gold;
     }
 
+    public int getDmg()
+    {
+        return dmg;
+    }
+    
     public int getHp() {
         return hp;
     }
@@ -102,6 +108,12 @@ public class Player
         {
             System.out.println("Error invalid move.");
         }
+    }
+    
+    public void addItem(Equipment equ)
+    {
+        
+        inventory.setEquipment(equ.getName(), equ);
     }
     
 }

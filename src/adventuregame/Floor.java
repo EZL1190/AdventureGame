@@ -16,6 +16,10 @@ public class Floor {
     private boolean eastExist;
     private boolean southExist;
     private String description;
+    private boolean hasEquipment;
+    private boolean hasItem;
+    private Equipment equipment;
+    private Item item;
     
     Floor(int gold, int x, int y, boolean chest, boolean northExist, boolean westExist, boolean eastExist, boolean southExist, String description)
     {
@@ -54,6 +58,16 @@ public class Floor {
 
     public int getGold() {
         return gold;
+    }
+    
+    
+    public void getItem(Player player)
+    {
+        if(hasEquipment)
+        {
+            player.addItem(equipment);
+            hasEquipment = false;
+        }
     }
     
 }
