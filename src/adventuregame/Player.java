@@ -15,7 +15,7 @@ public class Player
     {
         this.name = name;
         this.hp = hp;
-        this.dmg = dmg;
+        this.dmg = dmg + weapon.getDmg();
         this.weapon = weapon;
     }
 
@@ -120,7 +120,9 @@ public class Player
     
     public void equpipWeapon(Equipment weapon)
     {
+        dmg -= weapon.getDmg();
         this.weapon = weapon;
+        dmg += weapon.getDmg();
     }
     
     public Inventory getInventory()
