@@ -22,21 +22,26 @@ public class Enemy {
     private int maxDamage = 15;
     
     
-    public Enemy(int hp, int damage, String name, String type) {
+    public void Enemy(int hp, int damage, String name, String type) {
         this.hp = hp;
         this.damage = damage;
         this.name = name;
         //this.type = type;
     }
     
-    public void spawnEnemy()
+    public Enemy spawnEnemy()
     {
-        this.hp = rand.nextInt(maxHp);
-        this.damage = rand.nextInt(maxDamage);
+        this.hp = rand.nextInt(maxHp)+1;
+        this.damage = rand.nextInt(maxDamage)+1;
         this.name = type[rand.nextInt(type.length)];
-        
+        return this;
     }
 
+    public String getName()
+    {
+        return this.name;
+        
+    }
     public int getHp() {
         return hp;
     }
