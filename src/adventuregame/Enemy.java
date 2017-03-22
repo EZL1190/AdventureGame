@@ -17,7 +17,7 @@ public class Enemy {
     private int hp;
     private int damage;
     private String name;
-    private String[] type = {"Skeleton", "Zombie"};
+    private String[] type = {"Skeleton", "Zombie", "Goblin"};
     private int maxHp = 25;
     private int maxDamage = 15;
     
