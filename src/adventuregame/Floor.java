@@ -69,6 +69,10 @@ public class Floor {
         return hasEnemy;
     }
     
+    public void setHasEnemy(boolean hasEnemy)
+    {
+        this.hasEnemy = hasEnemy;
+    }
     
     public void getItem(Player player)
     {

@@ -10,11 +10,13 @@ public class Player
     private String name;
     private Inventory inventory = new Inventory();
     private Equipment weapon;
+    private int maxHp;
     
-    Player(String name, int hp, int dmg, Equipment weapon)
+    Player(String name, int hp, int maxHp, int dmg, Equipment weapon)
     {
         this.name = name;
         this.hp = hp;
+        this.maxHp = maxHp;
         this.dmg = dmg + weapon.getDmg();
         this.weapon = weapon;
     }
@@ -34,6 +36,11 @@ public class Player
     public int getDmg()
     {
         return dmg;
+    }
+    
+    public int getMaxHp()
+    {
+        return maxHp;
     }
     
     public int getHp() {

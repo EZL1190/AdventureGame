@@ -190,4 +190,50 @@ public class Output {
         System.out.println("Inventory slot 3");
 
     }
+    
+    public void winText()
+    {
+        System.out.println("\nCongratulations once again, you've ended the game with: " + player.getGold() + " gold");
+    }
+    
+    public void firstHit()
+    {
+        System.out.println("\nYou where hit by a surprise attack, and took 10 dmg");
+    }
+    
+    public void fight(int dmg, boolean enemy, int hp)
+    {
+        if(enemy)
+        {
+            System.out.println("Enemy took " + dmg + " dmg");
+            if(hp <= 0)
+                System.out.println("Enemy died");
+            else
+                System.out.println("Enemy have " + hp + " left");
+        }
+        else
+        {
+            System.out.println("You took " + dmg + " dmg");
+            if(hp <= 0)
+                System.out.println("You died");
+            else
+                System.out.println("You have " + hp + " left");
+        }
+    }
+    
+    public void lostFight()
+    {
+        System.out.println("You lost the fight");
+    }
+    
+    public void wonFight()
+    {
+        System.out.println("You won the fight");
+    }
+    
+    public void gameOver()
+    {
+        System.out.println("\nYou lost gameover");
+    }
+    
 }
