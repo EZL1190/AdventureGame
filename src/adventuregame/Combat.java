@@ -33,8 +33,7 @@ public class Combat {
             output.wonFight();
         else
         {
-            System.out.println("-------------");
-            fight(player, enemy);
+            output.combat("", player.getWeapon(), this, player, enemy, player.getInventory());
         }
         
     }

@@ -139,11 +139,11 @@ public class Output {
     }
 
     public void combat(String input, Equipment equipment, Combat combat, Player player, Enemy enemy, Inventory inventory) {
-
-        System.out.println((char) 27 + "[32m1; Attack!");
+        System.out.println("");
+        System.out.println((char) 27 + "[32m1; Attack! - " + player.getDmg() + " dmg");
 
         if (equipment.isHasSpell()) {
-            System.out.println((char) 27 + "[32m2; Use spell");
+            System.out.println((char) 27 + "[32m2; Use spell! - " + player.getWeapon().getSpellDmg() + " dmg");
         }
 
         if (!equipment.isHasSpell()) {
@@ -209,7 +209,7 @@ public class Output {
             if(hp <= 0)
                 System.out.println("Enemy died");
             else
-                System.out.println("Enemy have " + hp + " left");
+                System.out.println("Enemy have " + hp + " hp left");
         }
         else
         {
@@ -217,7 +217,7 @@ public class Output {
             if(hp <= 0)
                 System.out.println("You died");
             else
-                System.out.println("You have " + hp + " left");
+                System.out.println("You have " + hp + " hp left");
         }
     }
     
