@@ -11,6 +11,7 @@ import java.util.Random;
  *
  * @author Shxnna
  */
+//We can make random enemies, but we can also make a specific enemy with stats that we choose¿
 public class Enemy {
     Random rand = new Random();
     

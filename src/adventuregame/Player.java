@@ -57,7 +57,7 @@ public class Player
     {
         return position;
     }
-    
+    //We take two ints and make them into a string and compare it to the room names
     public void setPosition()
     {
         position = xPosition +"."+yPosition;

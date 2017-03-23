@@ -32,6 +32,7 @@ public class Combat {
         player.setHp(player.getHp()-enemy.getDamage());
         
     }
+    //We've made a chance that the enemy can suprise and make the first move and make a suprise attack.
     public void firstHit(Player player)
     {
         Random rand = new Random();

@@ -125,7 +125,7 @@ public class Output {
     public void error() {
         System.out.println("Invalid move.");
     }
-
+//Explains the enemy
     public void combatStart(Enemy enemy) {
         System.out.println("\nYou've engaged an enemy!");
         System.out.println("Enemy type: "+enemy.getName());

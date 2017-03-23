@@ -15,7 +15,7 @@ public class Game
     {
         output.setGame(this);
         output.setPlayer(player);
-        
+        //Here we make the floors from the predesigned map, giving them locations, gold enemies and a storyline. We also control which doorways are open and such.
         gameRunning = true;
         floors.put("0.0", new Floor(0, 0, 0, false, true, false, false, false, false,
                 "Name: Start room\n"
@@ -157,7 +157,7 @@ public class Game
         ));
         floors.get("1.4").setEnemy(new Enemy().spawnEnemy());
         
-        
+        //Here we put our chest, so if you find it the game ends and let's you know that you won the game
         while(gameRunning)
         {
             Floor floor = floors.get(player.getPosition());
@@ -170,14 +170,14 @@ public class Game
             }
             
             output.floorDescription(floor);
-            
+            //If there's an enemy we handle it here
             if(floor.gethasEnemy())
             {
                 combat.firstHit(player);
                 output.combatStart(floor.getEnemy());
                 output.combat("", player.getWeapon(), combat, player, floor.getEnemy(), player.getInventory());
             }
-            
+            //Loot for each floor
             output.loot(floor);
             floor.giveGold(player);
             output.waysToGo(floor);
