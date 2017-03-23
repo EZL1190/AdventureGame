@@ -236,4 +236,20 @@ public class Output {
         System.out.println("\nYou lost gameover");
     }
     
+    public void healing(int hp)
+    {
+        if(player.getHp() + hp >= player.getMaxHp())
+        {
+            System.out.println("You have ben fully healed");
+            player.setHp(player.getMaxHp());
+        }
+        else
+        {
+            System.out.println("You have ben healed for " + hp + " hp");
+            player.setHp(player.getHp() + hp);
+        }
+        
+        System.out.println("You now have " + player.getHp() + " hp\n");
+    }
+    
 }

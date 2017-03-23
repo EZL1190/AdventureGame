@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class Game 
 {
     boolean gameRunning;
-    Player player = new Player("player", 10, 10, 2, new Equipment("Rusty", "weapon", 2, 0, "", 0, 0, false));
+    Player player = new Player("player", 50, 50, 2, new Equipment("Rusty", "weapon", 2, 0, "", 0, 0, false));
     HashMap<String, Floor> floors = new HashMap<String, Floor>();
     Output output = new Output();
     Combat combat = new Combat(output);
@@ -161,7 +161,7 @@ public class Game
         while(gameRunning)
         {
             Floor floor = floors.get(player.getPosition());
-            player.setHp(player.getMaxHp());
+            output.healing(player.getMaxHp());
             if(floor.hasChest())
             {
                 gameRunning = false;
