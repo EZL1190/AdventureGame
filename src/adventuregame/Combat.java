@@ -12,11 +12,31 @@ import java.util.Random;
  * @author Shxnna
  */
 public class Combat {
+    Output output;
+    
+    public Combat(Output output)
+    {
+        this.output = output;
+    }
     
     public void fight(Player player, Enemy enemy)
     {
         playerAttack(player, enemy);
-        enemyAttack(player, enemy);
+        output.fight(player.getDmg(), true, enemy.getHp());
+        
+        if(enemy.getHp() > 0)   
+        {
+            enemyAttack(player, enemy);
+            output.fight(enemy.getDamage(), false, player.getHp());
+        }
+        if(player.getHp() <= 0)
+            output.lostFight();
+        else if(enemy.getHp() <= 0)
+            output.wonFight();
+        else
+        {
+            output.combat("", player.getWeapon(), this, player, enemy, player.getInventory());
+        }
         
     }
     
@@ -37,8 +57,11 @@ public class Combat {
         Random rand = new Random();
         int firsthit = rand.nextInt(100)+1;
         
-        if(firsthit > 90)
+        if(firsthit > 80)
+        {
             player.setHp(player.getHp()-10);
+            output.firstHit();
+        }
     }
     
     

@@ -65,19 +65,19 @@ public class Output {
                 playerInput(floor);
                 break;
 
-            case "north":
+            case "north": case "n":
                 north(floor);
                 break;
 
-            case "west":
+            case "west": case "w":
                 west(floor);
                 break;
 
-            case "south":
+            case "south": case "s":
                 south(floor);
                 break;
 
-            case "east":
+            case "east": case "e":
                 east(floor);
                 break;
 
@@ -139,11 +139,11 @@ public class Output {
     }
 
     public void combat(String input, Equipment equipment, Combat combat, Player player, Enemy enemy, Inventory inventory) {
-
-        System.out.println((char) 27 + "[32m1; Attack!");
+        System.out.println("");
+        System.out.println((char) 27 + "[32m1; Attack! - " + player.getDmg() + " dmg");
 
         if (equipment.isHasSpell()) {
-            System.out.println((char) 27 + "[32m2; Use spell");
+            System.out.println((char) 27 + "[32m2; Use spell! - " + player.getWeapon().getSpellDmg() + " dmg");
         }
 
         if (!equipment.isHasSpell()) {
@@ -190,4 +190,66 @@ public class Output {
         System.out.println("Inventory slot 3");
 
     }
+    
+    public void winText()
+    {
+        System.out.println("\nCongratulations once again, you've ended the game with: " + player.getGold() + " gold");
+    }
+    
+    public void firstHit()
+    {
+        System.out.println("\nYou where hit by a surprise attack, and took 10 dmg");
+    }
+    
+    public void fight(int dmg, boolean enemy, int hp)
+    {
+        if(enemy)
+        {
+            System.out.println("Enemy took " + dmg + " dmg");
+            if(hp <= 0)
+                System.out.println("Enemy died");
+            else
+                System.out.println("Enemy have " + hp + " hp left");
+        }
+        else
+        {
+            System.out.println("You took " + dmg + " dmg");
+            if(hp <= 0)
+                System.out.println("You died");
+            else
+                System.out.println("You have " + hp + " hp left");
+        }
+    }
+    
+    public void lostFight()
+    {
+        System.out.println("You lost the fight");
+    }
+    
+    public void wonFight()
+    {
+        System.out.println("You won the fight");
+    }
+    
+    public void gameOver()
+    {
+        System.out.println("\nYou lost gameover");
+    }
+    
+    public void healing(int hp)
+    {
+        if(player.getHp() + hp >= player.getMaxHp())
+        {
+            System.out.println("You have ben fully healed");
+            player.setHp(player.getMaxHp());
+        }
+        else
+        {
+            System.out.println("You have ben healed for " + hp + " hp");
+            player.setHp(player.getHp() + hp);
+        }
+        
+        System.out.println("You now have " + player.getHp() + " hp\n");
+    }
+    
 }

@@ -48,11 +48,11 @@ public class Equipment {
     public int getDmg() {
         return dmg;
     }
-
+    
     public void setDmg(int dmg) {
         this.dmg = dmg;
     }
-
+    
     public int getHp() {
         return hp;
     }

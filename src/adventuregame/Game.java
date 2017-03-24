@@ -6,10 +6,10 @@ import java.util.HashMap;
 public class Game 
 {
     boolean gameRunning;
-    Player player = new Player("player", 10, 2, new Equipment("Rusty", "weapon", 2, 0, "", 0, 0, false));
+    Player player = new Player("player", 50, 50, 2, new Equipment("Rusty", "weapon", 2, 0, "", 0, 0, false));
     HashMap<String, Floor> floors = new HashMap<String, Floor>();
     Output output = new Output();
-    Combat combat = new Combat();
+    Combat combat = new Combat(output);
     
     public void Start()
     {
@@ -161,11 +161,12 @@ public class Game
         while(gameRunning)
         {
             Floor floor = floors.get(player.getPosition());
+            output.healing(player.getMaxHp());
             if(floor.hasChest())
             {
                 gameRunning = false;
                 output.floorDescription(floor);
-                System.out.println("Congratulations once again, you've ended the game with: " + player.getGold() + " gold");
+                output.winText();
                 continue;
             }
             
@@ -176,6 +177,13 @@ public class Game
                 combat.firstHit(player);
                 output.combatStart(floor.getEnemy());
                 output.combat("", player.getWeapon(), combat, player, floor.getEnemy(), player.getInventory());
+                if(player.getHp() <= 0)
+                {
+                    output.gameOver();
+                    gameRunning = false;
+                    continue;
+                }
+                floor.setHasEnemy(false);
             }
             
             output.loot(floor);
