@@ -57,7 +57,7 @@ public class Combat {
         Random rand = new Random();
         int firsthit = rand.nextInt(100)+1;
         
-        if(firsthit > 90)
+        if(firsthit > 80)
         {
             player.setHp(player.getHp()-10);
             output.firstHit();
