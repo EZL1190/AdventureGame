@@ -82,7 +82,7 @@ public class Output {
                 break;
 
             default:
-                System.out.println("Invalid command");
+                System.out.println((char) 27 + "[31mInvalid command");
                 playerInput(floor);
                 break;
         }
@@ -123,14 +123,14 @@ public class Output {
     }
 
     public void error() {
-        System.out.println("Invalid move.");
+        System.out.println((char) 27 + "[31mInvalid move.");
     }
 
     public void combatStart(Enemy enemy) {
         System.out.println("\nYou've engaged an enemy!");
-        System.out.println("Enemy type: "+enemy.getName());
-        System.out.println("Enemy health: "+enemy.getHp());
-        System.out.println("Enemy attack damage: "+enemy.getDamage());
+        System.out.println((char) 27 + "[31mEnemy"+(char) 27 + "[30m type: "+enemy.getName());
+        System.out.println((char) 27 + "[31mEnemy"+(char) 27 + "[30m health: "+enemy.getHp());
+        System.out.println((char) 27 + "[31mEnemy"+(char) 27 + "[30m attack damage: "+enemy.getDamage());
    
         System.out.println("");
 
@@ -165,7 +165,7 @@ public class Output {
                 }
 
                 if (!equipment.isHasSpell()) {
-                    System.out.println("Invalid move");
+                    System.out.println((char) 27 + "[31mInvalid move");
                 }
                 combat(input, equipment, combat, player, enemy, inventory);
                 break;
@@ -175,7 +175,7 @@ public class Output {
                 break;
 
             default:
-                System.out.println("Invalid selection");
+                System.out.println("(char) 27 + \"[31mInvalid selection");
                 combat(input, equipment, combat, player, enemy, inventory);
                 break;
 
@@ -205,11 +205,11 @@ public class Output {
     {
         if(enemy)
         {
-            System.out.println("Enemy took " + dmg + " dmg");
+            System.out.println((char) 27 + "[31mEnemy"+(char) 27 + "[30m took " + dmg + " dmg");
             if(hp <= 0)
-                System.out.println("Enemy died");
+                System.out.println((char) 27 + "[32mEnemy died");
             else
-                System.out.println("Enemy have " + hp + " hp left");
+                System.out.println((char) 27 + "[31mEnemy"+(char) 27 + "[30m has " + hp + " hp left");
         }
         else
         {
