@@ -65,19 +65,19 @@ public class Output {
                 playerInput(floor);
                 break;
 
-            case "north":
+            case "north": case "n":
                 north(floor);
                 break;
 
-            case "west":
+            case "west": case "w":
                 west(floor);
                 break;
 
-            case "south":
+            case "south": case "s":
                 south(floor);
                 break;
 
-            case "east":
+            case "east": case "e":
                 east(floor);
                 break;
 
