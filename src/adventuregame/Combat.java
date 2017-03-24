@@ -24,9 +24,11 @@ public class Combat {
         playerAttack(player, enemy);
         output.fight(player.getDmg(), true, enemy.getHp());
         
-        enemyAttack(player, enemy);
-        output.fight(enemy.getDamage(), false, player.getHp());
-        
+        if(enemy.getHp() > 0)   
+        {
+            enemyAttack(player, enemy);
+            output.fight(enemy.getDamage(), false, player.getHp());
+        }
         if(player.getHp() <= 0)
             output.lostFight();
         else if(enemy.getHp() <= 0)
