@@ -16,6 +16,9 @@ public class Floor {
     private boolean southExist;
     private String description;
     private Enemy enemy = null;
+    private Weapon weapon = null;
+    private Item item = null;
+    private Potion potion = null;
     
     Floor(int gold, int x, int y, boolean northExist, boolean westExist, boolean eastExist, boolean southExist,String description)
     {
@@ -63,6 +66,21 @@ public class Floor {
     public boolean hasEnemy()
     {
         return enemy != null;
+    }
+    
+    public boolean hasWeapon()
+    {
+        return weapon != null;
+    }
+    
+    public boolean hasItem()
+    {
+        return item != null;
+    }
+    
+    public boolean hasPotion()
+    {
+        return potion != null;
     }
     
        

@@ -14,7 +14,7 @@ public class Inventory {
         return weapons;
     }
 
-    public void setWeapons(Weapon weapon) 
+    public void addWeapon(Weapon weapon) 
     {
         this.weapons[weaponCount] = weapon;
         weaponCount++;
@@ -25,7 +25,7 @@ public class Inventory {
         return items;
     }
 
-    public void setItems(Item item) 
+    public void addItem(Item item) 
     {
         this.items[itemCount] = item;
         itemCount++;
@@ -36,7 +36,7 @@ public class Inventory {
         return potions;
     }
 
-    public void setPotions(Potion potion) 
+    public void addPotion(Potion potion) 
     {
         this.potions[potionCount] = potion;
         potionCount++;

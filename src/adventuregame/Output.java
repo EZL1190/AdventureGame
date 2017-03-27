@@ -51,6 +51,9 @@ public class Output {
     public void commands(String input, Floor floor) {
         input = input.toLowerCase();
         switch (input) {
+            case "pickup": case "p":
+                pickup(floor);
+                break;
             case "quit":
                 quit();
                 break;
@@ -94,6 +97,20 @@ public class Output {
         System.out.println("Type 'quit' to leave the game.");
         System.out.println("You can go 4 directions, to go West type 'west', to go South type 'south' and so on. (West - Left, East - Right, North - Up, South - Down)");
         System.out.println("As you might have figured out, sometimes you're not able to go a certain direction, try another and see where that might take you.");
+    }
+    
+    void pickup(Floor floor)
+    {
+        if(floor.hasWeapon())
+        {
+            
+        }
+        if(floor.hasItem())
+        {
+        }
+        if(floor.hasPotion())
+        {
+        }
     }
 
     public void quit() {
