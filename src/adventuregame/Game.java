@@ -21,7 +21,8 @@ public class Game
                 "Name: Start room\n"
                 + "You’re standing in a bright hallway, and the door behind you just closed.\n"
                 + "You’ve tried to open it, but it’s stuck. There’s only one thing to do, you must proceed forward.\n"
-                + "Unless you’re a pussy, then there’s a vent up to the left, just type ‘quit’ and get out of this badass dungeon."
+                + "Unless you’re a pussy, then there’s a vent up to the left, just type ‘quit’ and get out of this badass dungeon.\n"
+                        + "If you at any point need help, try the help command 'help'"
         ));
         
         floors.put("-1.1", new Floor(0, -1, 1, false, false, true, true, false, true,
