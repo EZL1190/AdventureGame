@@ -1,11 +1,12 @@
 package adventuregame;
 
-public class Item implements ItemsInferface
+public class Weapon implements ItemsInferface
 {
 
     @Override
     public void pickUp(Player player) 
     {
+        player.getInventory().setWeapons(this);
     }
 
     @Override

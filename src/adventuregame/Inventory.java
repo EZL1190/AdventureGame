@@ -1,31 +1,47 @@
 package adventuregame;
 
-import java.util.ArrayList;
-
-
 public class Inventory {
-    private ArrayList<Equipment> equipment = new ArrayList<Equipment>();
-    private ArrayList<Item> item = new ArrayList<Item>();
+    private Weapon[] weapons = new Weapon[3];
+    private Item[] items = new Item[3];
+    private Potion[] potions = new Potion[3];
     
-    public void setEquipment(String name, Equipment equ)
+    private int weaponCount = 0;
+    private int itemCount = 0;
+    private int potionCount = 0;
+
+    public Weapon[] getWeapons() 
     {
-        equipment.add(equ);
+        return weapons;
+    }
+
+    public void setWeapons(Weapon weapon) 
+    {
+        this.weapons[weaponCount] = weapon;
+        weaponCount++;
+    }
+
+    public Item[] getItems() 
+    {
+        return items;
+    }
+
+    public void setItems(Item item) 
+    {
+        this.items[itemCount] = item;
+        itemCount++;
+    }
+
+    public Potion[] getPotions() 
+    {
+        return potions;
+    }
+
+    public void setPotions(Potion potion) 
+    {
+        this.potions[potionCount] = potion;
+        potionCount++;
     }
     
-    public void setItem(String name, Item item)
-    {
-        this.item.add(item);
-    }
-    
-    public Equipment getEquipment(int n)
-    {
-        return equipment.get(n);
-    }
-    
-    public Item getItem(int n)
-    {
-        return item.get(n);
-    }
     
     
 }

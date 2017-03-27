@@ -1,6 +1,5 @@
 package adventuregame;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Game 
@@ -157,13 +156,27 @@ public class Game
         while(gameRunning)
         {
             Floor floor = floors.get(player.getPosition());
-            output.healing(player.getMaxHp());
+            //output.healing(player.getMaxHp());
             
             output.floorDescription(floor);
             
             //Loot for each floor
-            output.loot(floor);
-            floor.giveGold(player);
+            //output.loot(floor);
+            //floor.giveGold(player);
+            if(floor.hasEnemy())
+            {
+                combat.firstHit(player);
+                output.combatStart(floor.getEnemy());
+                output.combat("", player.getWeapon(), combat, player, floor.getEnemy(), player.getInventory());
+                if(player.getHp() <= 0)
+                {
+                    output.gameOver();
+                    gameRunning = false;
+                    continue;
+                }
+                floor.setEnemy(null);
+            }
+            
             output.waysToGo(floor);
             output.playerInput(floor);
         }

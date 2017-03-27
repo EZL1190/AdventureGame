@@ -15,7 +15,7 @@ public class Floor {
     private boolean eastExist;
     private boolean southExist;
     private String description;
-    private Enemy enemy;
+    private Enemy enemy = null;
     
     Floor(int gold, int x, int y, boolean northExist, boolean westExist, boolean eastExist, boolean southExist,String description)
     {
@@ -59,5 +59,11 @@ public class Floor {
     {
         return enemy;
     }
+    
+    public boolean hasEnemy()
+    {
+        return enemy != null;
+    }
+    
        
 }

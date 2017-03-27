@@ -1,6 +1,6 @@
 package adventuregame;
 
-public class Item implements ItemsInferface
+public class Potion implements ItemsInferface
 {
 
     @Override

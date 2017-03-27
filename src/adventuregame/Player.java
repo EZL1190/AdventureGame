@@ -119,12 +119,6 @@ public class Player
         }
     }
     
-    public void addItem(Equipment equ)
-    {
-        
-        inventory.setEquipment(equ.getName(), equ);
-    }
-    
     public void equpipWeapon(Equipment weapon)
     {
         dmg -= weapon.getDmg();
