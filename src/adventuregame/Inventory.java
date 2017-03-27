@@ -9,6 +9,21 @@ public class Inventory {
     private int itemCount = 0;
     private int potionCount = 0;
 
+    public boolean maxWeapons()
+    {
+        return weaponCount >= weapons.length;
+    }
+    
+    public boolean maxItems()
+    {
+        return itemCount >= items.length;
+    }
+    
+    public boolean maxPotions()
+    {
+        return potionCount >= potions.length;
+    }
+    
     public Weapon[] getWeapons() 
     {
         return weapons;

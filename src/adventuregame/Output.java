@@ -103,7 +103,18 @@ public class Output {
     {
         if(floor.hasWeapon())
         {
-            
+         if(player.getInventory().maxWeapons())
+         {
+             System.out.println("You can't hold anymore weapons, drop a waepon y/n?");
+             String str = userInput.nextLine();
+             // show weapons
+             // pick weapon to drop
+         }
+         else
+         {
+             floor.getWeapon().pickUp(player);
+             floor.setWeapon(null);
+         }
         }
         if(floor.hasItem())
         {
