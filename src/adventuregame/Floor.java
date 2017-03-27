@@ -51,6 +51,7 @@ public class Floor {
     public void giveGold(Player player)
     {
         player.setGold(gold + player.getGold());
+        gold = 0;
     }
     public boolean hasChest()
     {
@@ -68,6 +69,10 @@ public class Floor {
         return hasEnemy;
     }
     
+    public void setHasEnemy(boolean hasEnemy)
+    {
+        this.hasEnemy = hasEnemy;
+    }
     
     public void getItem(Player player)
     {

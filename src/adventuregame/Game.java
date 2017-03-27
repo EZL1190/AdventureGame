@@ -6,10 +6,10 @@ import java.util.HashMap;
 public class Game 
 {
     boolean gameRunning;
-    Player player = new Player("player", 10, 2, new Equipment("Rusty", "weapon", 2, 0, "", 0, 0, false));
+    Player player = new Player("player", 50, 50, 2, new Equipment("Rusty", "weapon", 2, 0, "", 0, 0, false));
     HashMap<String, Floor> floors = new HashMap<String, Floor>();
     Output output = new Output();
-    Combat combat = new Combat();
+    Combat combat = new Combat(output);
     
     public void Start()
     {
@@ -102,58 +102,58 @@ public class Game
         ));
         floors.put("-2.1", new Floor(20, -2, 1, false, true, false, true, false, true,
                 
-                "Name: MingLee’s Asian Supermarket\n" +
-"You’ve entered the infamous MingLee’s supermarket, this place was filled with delicious specialties from the Asian culture.\n"
-                        + "The supermarket went bankrupt as soon as MingLee was killed by a horde of enemies.\n"
-                        + "What remains of his shop is guarded by those enemies who ruined his beautiful shop.\n"
-                        + "The smell is strong, all the different spices combining to make an odor so strong that only Zombies would be able to survive in here." 
+                "Name: MingLee’s Asian Supermarket\n" 
+                + "You’ve entered the infamous MingLee’s supermarket, this place was filled with delicious specialties from the Asian culture.\n"
+                + "The supermarket went bankrupt as soon as MingLee was killed by a horde of enemies.\n"
+                + "What remains of his shop is guarded by those enemies who ruined his beautiful shop.\n"
+                + "The smell is strong, all the different spices combining to make an odor so strong that only Zombies would be able to survive in here." 
         ));
         floors.get("-2.1").setEnemy(new Enemy().spawnEnemy());
         floors.put("-2.2", new Floor(45, -2, 2, false, true, false, false, true, true,
                 
-                "Name: The programmer’s bungalow\n" +
-"You’ve entered the room of the most hardworking coders in this universe, these two incredible programmers have been working all week to accomplish the almighty creators wicked ideas.\n"
-                        + "You’ve disturbed them in their making of the next evolution of TAG, for this you will be punished.\n"
-                        + "Because of their non-stop hard work, these students have become Zombies with an unfulfilled hunger for study points.\n"
-                        + "You must give them their well-earned study points, to make it out of this maze." 
+                "Name: The programmer’s bungalow\n" 
+                + "You’ve entered the room of the most hardworking coders in this universe, these two incredible programmers have been working all week to accomplish the almighty creators wicked ideas.\n"
+                + "You’ve disturbed them in their making of the next evolution of TAG, for this you will be punished.\n"
+                + "Because of their non-stop hard work, these students have become Zombies with an unfulfilled hunger for study points.\n"
+                + "You must give them their well-earned study points, to make it out of this maze." 
         ));
         floors.get("-2.2").setEnemy(new Enemy().spawnEnemy());
         floors.put("-2.3", new Floor(100, -2, 3, false, false, false, true, true, false,
                 
-                "Name:  The Vosserfall \n" +
-"Would you look at that! It’s the Vosserfall, the world’s largest waterfall, named after the legend himself, the almighty creator of this universe.\n"
-                        + "The water falls in such elegance you’ve never seen before, the water is crystal clear.\n"
-                        + "Heaven is as blue as the sea, no skies in sight and the sun has never shined brighter upon you.\n"
-                        + "The beautiful environment has cleansed your soul and regained all your lost stats." 
+                "Name:  The Vosserfall \n" 
+                + "Would you look at that! It’s the Vosserfall, the world’s largest waterfall, named after the legend himself, the almighty creator of this universe.\n"
+                + "The water falls in such elegance you’ve never seen before, the water is crystal clear.\n"
+                + "Heaven is as blue as the sea, no skies in sight and the sun has never shined brighter upon you.\n"
+                + "The beautiful environment has cleansed your soul and regained all your lost stats." 
         ));
         floors.put("1.3", new Floor(12, 1, 3, false, true, false, false, true, false,
                 
-                "Name: Childhood home\n" +
-"In some weird way, you’ve ended up in your childhood home, this place is filled with memories.\n"
-                        + "I’m sure you know your way around this place better than I do. \n"
-                        + "Have a look around and see if you can find any valuables to help you along the way of this impressive maze. \n" +
-"Got it? Nice, let’s move along. " 
+                "Name: Childhood home\n" 
+                + "In some weird way, you’ve ended up in your childhood home, this place is filled with memories.\n"
+                + "I’m sure you know your way around this place better than I do. \n"
+                + "Have a look around and see if you can find any valuables to help you along the way of this impressive maze. \n" +
+                "Got it? Nice, let’s move along. " 
         ));
         floors.put("-1.4", new Floor(420, -1, 4, false, false, true, true, false, true,
                 
-                "Name: Sindragosa’s lair \n" +
-"It seems like you’ve entered the lair of Sindragosa, Sindragosa is a mighty frost wyrm who once ruled the world. \n"
-                        + "Before Sindragosa will even look upon your weak body, you must defeat her goblin servants first.\n"
-                        + "The easiest way to kill them is to use an AoE attack, sadly this game isn’t in that stage yet, so you’ll have to take them out one by one. "
+                "Name: Sindragosa’s lair \n" 
+                + "It seems like you’ve entered the lair of Sindragosa, Sindragosa is a mighty frost wyrm who once ruled the world. \n"
+                + "Before Sindragosa will even look upon your weak body, you must defeat her goblin servants first.\n"
+                + "The easiest way to kill them is to use an AoE attack, sadly this game isn’t in that stage yet, so you’ll have to take them out one by one. "
         ));
         floors.get("-1.4").setEnemy(new Enemy().spawnEnemy());
         floors.put("0.4", new Floor(47, 0, 4, false, false, true, true, false, false,
                 
-                "Name: Lord von Apache’s kitchen\n" +
-"You’ve discovered another location of Lord von Apache! This is said to be his ‘kitchen’ or armory, whatever you prefer.\n"
-                        + "You might be able to find some equipment that will become handy within the next few moves. ‘Spoiler alert!’ " 
+                "Name: Lord von Apache’s kitchen\n"
+                + "You’ve discovered another location of Lord von Apache! This is said to be his ‘kitchen’ or armory, whatever you prefer.\n"
+                + "You might be able to find some equipment that will become handy within the next few moves. ‘Spoiler alert!’ " 
         ));
         floors.put("1.4", new Floor(0, 1, 4, false, false, true, false, true, true,
                 
-                "Name: The home of your middle school teacher\n" +
-"Remember that teacher you had a crush on in middle school? \n" +
-"We’re now in her home, look at all these cats, she must be a little lonely huh?\n" +
-"Wait, what the hell is that over there? Is that one of Lucas Kuhn’s tools!" 
+                "Name: The home of your middle school teacher\n" 
+                + "Remember that teacher you had a crush on in middle school? \n" 
+                + "We’re now in her home, look at all these cats, she must be a little lonely huh?\n" 
+                + "Wait, what the hell is that over there? Is that one of Lucas Kuhn’s tools!" 
         ));
         floors.get("1.4").setEnemy(new Enemy().spawnEnemy());
         
@@ -161,11 +161,12 @@ public class Game
         while(gameRunning)
         {
             Floor floor = floors.get(player.getPosition());
+            output.healing(player.getMaxHp());
             if(floor.hasChest())
             {
                 gameRunning = false;
                 output.floorDescription(floor);
-                System.out.println("Congratulations once again, you've ended the game with: " + player.getGold() + " gold");
+                output.winText();
                 continue;
             }
             
@@ -176,6 +177,13 @@ public class Game
                 combat.firstHit(player);
                 output.combatStart(floor.getEnemy());
                 output.combat("", player.getWeapon(), combat, player, floor.getEnemy(), player.getInventory());
+                if(player.getHp() <= 0)
+                {
+                    output.gameOver();
+                    gameRunning = false;
+                    continue;
+                }
+                floor.setHasEnemy(false);
             }
             //Loot for each floor
             output.loot(floor);
