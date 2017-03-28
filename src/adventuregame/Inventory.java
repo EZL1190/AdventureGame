@@ -46,7 +46,7 @@ public class Inventory {
             }
             else
             {
-                str += "[" + i+1 + "]";
+                str += "[" + i+1 + "]\n";
             }
         }
         
@@ -74,7 +74,7 @@ public class Inventory {
             }
             else
             {
-                str += "[" + i+1 + "]";
+                str += "[" + i+1 + "]\n";
             }
         }
         
