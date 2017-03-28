@@ -60,7 +60,7 @@ public class Weapon implements ItemsInferface
     @Override
     public String getName() 
     {
-        return"";
+        return name;
     }
 
 }

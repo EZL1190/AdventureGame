@@ -103,44 +103,46 @@ public class Output {
     {
         if(floor.hasWeapon())
         {
-         if(player.getInventory().maxWeapons())
-         {
-             System.out.println("You can't hold anymore weapons, drop a waepon y/n?");
-             String str = userInput.nextLine();
-             if(str.equals("y") || str.equals("yes"))
-             {
-                boolean validate = false;
-                while(!validate)
+            System.out.println("\n");
+            if(player.getInventory().maxWeapons())
+            {
+                System.out.println("You can't hold anymore weapons, drop a waepon y/n?");
+                String str = userInput.nextLine();
+                if(str.equals("y") || str.equals("yes"))
                 {
-                    System.out.println("Which one will you drop?");
-                    player.getInventory().showWeapon();
-                    str = userInput.nextLine();
-                    switch(str)
+                    boolean validate = false;
+                    while(!validate)
                     {
-                        case "1":
-                            player.getInventory().dropWeapon(1);
-                            validate = true;
-                            break;
-                        case "2":
-                            player.getInventory().dropWeapon(2);
-                            validate = true;
-                            break;
-                        case "3":
-                            player.getInventory().dropWeapon(3);
-                            validate = true;
-                            break;
-                        default:
-                            System.out.println("Invalid entry");
-                            break;
+                        System.out.println("Which one will you drop?");
+                        player.getInventory().showWeapon();
+                        str = userInput.nextLine();
+                        switch(str)
+                        {
+                            case "1":
+                                player.getInventory().dropWeapon(1);
+                                validate = true;
+                                break;
+                            case "2":
+                                player.getInventory().dropWeapon(2);
+                                validate = true;
+                                break;
+                            case "3":
+                                player.getInventory().dropWeapon(3);
+                                validate = true;
+                                break;
+                            default:
+                                System.out.println("Invalid entry");
+                                break;
+                        }
                     }
                 }
-             }
-         }
-         else
-         {
-             floor.getWeapon().pickUp(player);
-             floor.setWeapon(null);
-         }
+            }
+            else
+            {
+                System.out.println("You have picked up " + floor.getWeapon().getName());
+                floor.getWeapon().pickUp(player);
+                floor.setWeapon(null);
+            }
         }
         if(floor.hasItem())
         {
