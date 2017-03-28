@@ -53,6 +53,16 @@ public class Inventory {
         return str;
     }
     
+    public void dropWeapon(int n)
+    {
+        weapons[n]=null;
+    }
+    
+    public void dropItem(int n)
+    {
+        items[n]=null;
+    }
+    
     public String showInventory()
     {
         String str = "";
