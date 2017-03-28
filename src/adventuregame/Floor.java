@@ -81,9 +81,22 @@ public class Floor {
             return null;
     }
     
+    public Item getItem()
+    {
+        if(hasItem())
+            return item;
+        else
+            return null;
+    }
+    
     public void setWeapon(Weapon weapon)
     {
         this.weapon = weapon;
+    }
+    
+    public void setWeapon(Item item)
+    {
+        this.item = item;
     }
     
     public boolean hasItem()
