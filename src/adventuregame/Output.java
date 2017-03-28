@@ -107,8 +107,33 @@ public class Output {
          {
              System.out.println("You can't hold anymore weapons, drop a waepon y/n?");
              String str = userInput.nextLine();
-             // show weapons
-             // pick weapon to drop
+             if(str.equals("y") || str.equals("yes"))
+             {
+                boolean validate = false;
+                while(!validate)
+                {
+                    player.getInventory().showWeapon();
+                    str = userInput.nextLine();
+                    switch(str)
+                    {
+                        case "1":
+                            player.getInventory().dropWeapon(1);
+                            validate = true;
+                            break;
+                        case "2":
+                            player.getInventory().dropWeapon(2);
+                            validate = true;
+                            break;
+                        case "3":
+                            player.getInventory().dropWeapon(3);
+                            validate = true;
+                            break;
+                        default:
+                            System.out.println("Invalid entry");
+                            break;
+                    }
+                }
+             }
          }
          else
          {
