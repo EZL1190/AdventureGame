@@ -55,12 +55,12 @@ public class Inventory {
     
     public void dropWeapon(int n)
     {
-        weapons[n]=null;
+        weapons[n-1]=null;
     }
     
     public void dropItem(int n)
     {
-        items[n]=null;
+        items[n-1]=null;
     }
     
     public String showInventory()
