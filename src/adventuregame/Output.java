@@ -112,6 +112,7 @@ public class Output {
                 boolean validate = false;
                 while(!validate)
                 {
+                    System.out.println("Which one will you drop?");
                     player.getInventory().showWeapon();
                     str = userInput.nextLine();
                     switch(str)
@@ -143,6 +144,44 @@ public class Output {
         }
         if(floor.hasItem())
         {
+            if(player.getInventory().maxWeapons())
+         {
+             System.out.println("You can't hold anymore weapons, drop a waepon y/n?");
+             String str = userInput.nextLine();
+             if(str.equals("y") || str.equals("yes"))
+             {
+                boolean validate = false;
+                while(!validate)
+                {
+                    System.out.println("Which one will you drop?");
+                    player.getInventory().showInventory();
+                    str = userInput.nextLine();
+                    switch(str)
+                    {
+                        case "1":
+                            player.getInventory().dropItem(1);
+                            validate = true;
+                            break;
+                        case "2":
+                            player.getInventory().dropItem(2);
+                            validate = true;
+                            break;
+                        case "3":
+                            player.getInventory().dropItem(3);
+                            validate = true;
+                            break;
+                        default:
+                            System.out.println("Invalid entry");
+                            break;
+                    }
+                }
+             }
+         }
+         else
+         {
+             floor.getItem().pickUp(player);
+             floor.setItem(null);
+         }
         }
         if(floor.hasPotion())
         {
