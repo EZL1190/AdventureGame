@@ -53,6 +53,7 @@ public class Output {
         switch (input) {
             case "pickup": case "p":
                 pickup(floor);
+                playerInput(floor);
                 break;
             case "quit":
                 quit();
@@ -139,7 +140,7 @@ public class Output {
             }
             else
             {
-                System.out.println("You have picked up " + floor.getWeapon().getName());
+                System.out.println((char)27 + "[36mYou have picked up " + floor.getWeapon().getName());
                 floor.getWeapon().pickUp(player);
                 floor.setWeapon(null);
             }
