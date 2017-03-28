@@ -106,7 +106,7 @@ public class Output {
             System.out.println("\n");
             if(player.getInventory().maxWeapons())
             {
-                System.out.println("You can't hold anymore weapons, drop a waepon y/n?");
+                System.out.println("You can't hold anymore weapons, drop a weapon y/n?");
                 String str = userInput.nextLine();
                 if(str.equals("y") || str.equals("yes"))
                 {
@@ -148,7 +148,7 @@ public class Output {
         {
             if(player.getInventory().maxWeapons())
          {
-             System.out.println("You can't hold anymore weapons, drop a waepon y/n?");
+             System.out.println("You can't hold anymore weapons, drop a weapon y/n?");
              String str = userInput.nextLine();
              if(str.equals("y") || str.equals("yes"))
              {
@@ -192,7 +192,7 @@ public class Output {
 
     public void quit() {
         System.out.println("I guess you were too scared to make your way through this amazing maze, I guess it was all to much for a weak spirit like you.\n"
-                + "I never really expected you to enter the door anyways, I was surprised to see a pleb like you enter this wonderful game.");;
+                + "I never really expected you to enter the door anyways, I was surprised to see a pleb like you enter this wonderful game.");
         game.gameRunning = false;
     }
 
