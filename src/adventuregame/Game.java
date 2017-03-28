@@ -31,6 +31,7 @@ public class Game
                 + "As you could imagine there’s no valuables in here, you should consider getting out real fast.\n"
                 + "There’s said to be a curse in this room that might change the way you look."
         ));
+        floors.get("-1.1").setWeapon(new Weapon("Rusty2", 3, false, 0, "", 0, 0, false));
         
         floors.put("0.1", new Floor(5, 0, 1, true, true, true, false,
                 "Name: Lord von Apache’s treasure room\n"

@@ -94,7 +94,7 @@ public class Floor {
         this.weapon = weapon;
     }
     
-    public void setWeapon(Item item)
+    public void setItem(Item item)
     {
         this.item = item;
     }
