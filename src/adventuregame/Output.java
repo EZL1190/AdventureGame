@@ -105,7 +105,7 @@ public class Output {
         {
          if(player.getInventory().maxWeapons())
          {
-             System.out.println("You can't hold anymore weapons, drop a waepon y/n?");
+             System.out.println("You can't hold anymore weapons, drop a weapon y/n?");
              String str = userInput.nextLine();
              if(str.equals("y") || str.equals("yes"))
              {
@@ -146,7 +146,7 @@ public class Output {
         {
             if(player.getInventory().maxWeapons())
          {
-             System.out.println("You can't hold anymore weapons, drop a waepon y/n?");
+             System.out.println("You can't hold anymore weapons, drop a weapon y/n?");
              String str = userInput.nextLine();
              if(str.equals("y") || str.equals("yes"))
              {
