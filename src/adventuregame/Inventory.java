@@ -52,6 +52,24 @@ public class Inventory {
         
         return str;
     }
+    
+    public String showInventory()
+    {
+        String str = "";
+        for(int i = 0; i < items.length; i++)
+        {
+            if(items[i] != null)
+            {
+                str += "[" + i+1 + "] " + items[i].getName() + "\n";
+            }
+            else
+            {
+                str += "[" + i+1 + "]";
+            }
+        }
+        
+        return str;
+    }
 
     public Item[] getItems() 
     {
