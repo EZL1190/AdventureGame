@@ -34,6 +34,24 @@ public class Inventory {
         this.weapons[weaponCount] = weapon;
         weaponCount++;
     }
+    
+    public String showWeapon()
+    {
+        String str = "";
+        for(int i = 0; i < weapons.length; i++)
+        {
+            if(weapons[i] != null)
+            {
+                str += "[" + i+1 + "] " + weapons[i].getName() + "\n";
+            }
+            else
+            {
+                str += "[" + i+1 + "]";
+            }
+        }
+        
+        return str;
+    }
 
     public Item[] getItems() 
     {
