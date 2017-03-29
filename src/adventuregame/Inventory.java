@@ -42,11 +42,11 @@ public class Inventory {
         {
             if(weapons[i] != null)
             {
-                str += "[" + i+1 + "] " + weapons[i].getName() + "\n";
+                str += "[" + (i+1) + "] " + weapons[i].getName() + "\n";
             }
             else
             {
-                str += "[" + i+1 + "]\n";
+                str += "[" + (i+1) + "]\n";
             }
         }
         

@@ -115,7 +115,7 @@ public class Output {
                     while(!validate)
                     {
                         System.out.println("Which one will you drop?");
-                        player.getInventory().showWeapon();
+                        System.out.println(player.getInventory().showWeapon());
                         str = userInput.nextLine();
                         switch(str)
                         {

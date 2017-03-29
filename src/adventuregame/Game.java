@@ -38,6 +38,8 @@ public class Game
                 + "This is the room of Lord von Apache, what you see here is the remains of him, there wasn’t a lot but it’s a start.\n"
                 + "The room is grey, with multiple pieces of art around the walls the furniture is covered in white sheets to protect their value. "
         ));
+        floors.get("0.1").setWeapon(new Weapon("Rusty3", 3, false, 0, "", 0, 0, false));
+        
         floors.put("1.1", new Floor(15, 1, 1, true, true, false, false,
                 "Name: Watchmaker Hummels’ chamber\n"
                 + "The door is heavy and you’re pushing it with all you’ve got, the door is old and making a lot of noise.\n"
@@ -53,6 +55,8 @@ public class Game
                 + "At least that’s what they tell us, you could also just have fun and use the power in whatever way you find appropriate…\n"
                 + "Whatever you want to do."
         ));
+        floors.get("-1.2").setWeapon(new Weapon("Rusty4", 3, false, 0, "", 0, 0, false));
+        
         floors.put("0.2", new Floor(50, 0, 2, true, false, true, true,
                 "Name: The hiding closet of Lucas Kuhn\n" 
                 + "Go back, hurry it’s a trap. Nah man just kidding, it’s safe in here… Trust me.\n"
@@ -62,6 +66,8 @@ public class Game
                 + "Some people say he was acting as a maniac at day and a pimp at night, if you look closely you might find items of high value.\n"
                 + "This closet has secret exits, try and find your way out before the maniac Kuhn gets back."
         ));
+        
+        
         floors.put("1.2", new Floor(7, 1, 2, true, true, false, true,
                 "Name: Hall of ghosts\n" 
                 + "You’ve entered a hall which is completely dark, you’re fumbling your way through the hall and stumbling across some sharp edges, what could this be?\n"
@@ -107,6 +113,8 @@ public class Game
                 + "What remains of his shop is guarded by those enemies who ruined his beautiful shop.\n"
                 + "The smell is strong, all the different spices combining to make an odor so strong that only Zombies would be able to survive in here." 
         ));
+        floors.get("-2.1").setWeapon(new Weapon("Rusty5", 3, false, 0, "", 0, 0, false));
+        
         floors.put("-2.2", new Floor(45, -2, 2, true, false, false, true,
                 
                 "Name: The programmer’s bungalow\n" 
@@ -115,7 +123,8 @@ public class Game
                 + "Because of their non-stop hard work, these students have become Zombies with an unfulfilled hunger for study points.\n"
                 + "You must give them their well-earned study points, to make it out of this maze." 
         ));
-        floors.get("-2.2").setEnemy(new Enemy().spawnEnemy());
+        floors.get("-2.2").setWeapon(new Weapon("Rusty4", 3, false, 0, "", 0, 0, false));
+        
         floors.put("-2.3", new Floor(100, -2, 3, false, false, true, true,
                 
                 "Name:  The Vosserfall \n" 
