@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Game 
 {
     boolean gameRunning;
-    Player player = new Player("player", 50, 50, 2, new Equipment("Rusty", "weapon", 2, 0, "", 0, 0, false));
+    Player player = new Player("player", 50, 50, 2, new Weapon("Rusty", 2, false, 0, "", 0, 0, false));
     HashMap<String, Floor> floors = new HashMap<String, Floor>();
     Output output = new Output();
     Combat combat = new Combat(output);

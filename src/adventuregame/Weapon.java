@@ -51,6 +51,11 @@ public class Weapon implements ItemsInferface
         return spellActive;
     }
     
+    public boolean isHasSpell()
+    {
+        return spellName.equals("");
+    }
+    
     @Override
     public void pickUp(Player player) 
     {

@@ -35,14 +35,14 @@ public class Inventory {
         weaponCount++;
     }
     
-    public String showWeapon()
+    public String showWeapons()
     {
         String str = "";
         for(int i = 0; i < weapons.length; i++)
         {
             if(weapons[i] != null)
             {
-                str += "[" + (i+1) + "] " + weapons[i].getName() + "\n";
+                str += "[" + (i+1) + "] '" + weapons[i].getName() + "' dmg - " + weapons[i].getDmg() + "\n";
             }
             else
             {
@@ -111,10 +111,10 @@ public class Inventory {
         {
             if(weapons[i] != null)
             {
-                str += weapons[i].getName() + " dmg - " + weapons[i].getDmg();
+                str += "'" + weapons[i].getName() + "' dmg - " + weapons[i].getDmg();
                 if(weapons[i].getSpellDmg() != 0)
                 {
-                    str += " " + weapons[i].getName() + " spellDmg - " + weapons[i].getDmg() + " cooldown: " + weapons[i].getSpellCd();
+                    str += " '" + weapons[i].getName() + "' spellDmg - " + weapons[i].getDmg() + " cooldown: " + weapons[i].getSpellCd();
                 }
                 str += "\n";
             }
@@ -140,5 +140,14 @@ public class Inventory {
         return str;
     }
     
+    public void changeWeapon(Player player, int i)
+    {
+        Weapon tmp = player.getWeapon();
+        if(weapons[i] != null)
+            player.equpipWeapon(weapons[i]);
+        else
+            player.equpipWeapon(null);
+        weapons[i] = tmp;
+    }
     
 }

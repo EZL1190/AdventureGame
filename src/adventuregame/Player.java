@@ -9,10 +9,10 @@ public class Player
     private int yPosition;
     private String name;
     private Inventory inventory = new Inventory();
-    private Equipment weapon;
+    private Weapon weapon;
     private int maxHp;
     
-    Player(String name, int hp, int maxHp, int dmg, Equipment weapon)
+    Player(String name, int hp, int maxHp, int dmg, Weapon weapon)
     {
         this.name = name;
         this.hp = hp;
@@ -119,11 +119,23 @@ public class Player
         }
     }
     
-    public void equpipWeapon(Equipment weapon)
+    public void equpipWeapon(Weapon weapon)
     {
-        dmg -= weapon.getDmg();
-        this.weapon = weapon;
-        dmg += weapon.getDmg();
+        if(weapon != null)
+        {
+            if(this.weapon != null)
+            {
+                dmg -= this.weapon.getDmg();
+            }
+            this.weapon = weapon;
+            dmg += weapon.getDmg();
+        }
+        else
+        {
+            if(this.weapon != null)
+                dmg -= this.weapon.getDmg();
+            this.weapon = null;
+        }
     }
     
     public Inventory getInventory()
@@ -131,7 +143,7 @@ public class Player
         return inventory;
     }
     
-    public Equipment getWeapon()
+    public Weapon getWeapon()
     {
         return weapon;
     }

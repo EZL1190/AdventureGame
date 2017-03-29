@@ -51,14 +51,20 @@ public class Output {
     public void commands(String input, Floor floor) {
         input = input.toLowerCase();
         switch (input) {
+            case "changeweapon": case "cw":
+                changeWeapon();
+                playerInput(floor);
+                break;
             case "showinventory": case "sinv":
                 System.out.println(player.getInventory().showInventory());
                 playerInput(floor);
                 break;
+                
             case "pickup": case "p":
                 pickup(floor);
                 playerInput(floor);
                 break;
+                
             case "quit":
                 quit();
                 break;
@@ -104,6 +110,25 @@ public class Output {
         System.out.println("As you might have figured out, sometimes you're not able to go a certain direction, try another and see where that might take you.");
     }
     
+    public void changeWeapon()
+    {
+        if(player.getWeapon() != null)
+            System.out.println("Current weapon: '" + player.getWeapon().getName() + "' dmg - " + player.getWeapon().getDmg());
+        else
+            System.out.println("You have no weapon equipped");
+        System.out.println(player.getInventory().showWeapons());
+        boolean validate = false;
+        while(!validate)
+        {
+            int n = Integer.parseInt(userInput.nextLine());
+            if(n == 1 || n == 2 || n == 3)
+            {
+                validate = true;
+                player.getInventory().changeWeapon(player, (n-1));
+            }
+        }
+    }
+    
     void pickup(Floor floor)
     {
         if(floor.hasWeapon())
@@ -119,7 +144,7 @@ public class Output {
                     while(!validate)
                     {
                         System.out.println("Which one will you drop?");
-                        System.out.println(player.getInventory().showWeapon());
+                        System.out.println(player.getInventory().showWeapons());
                         str = userInput.nextLine();
                         switch(str)
                         {
@@ -237,15 +262,15 @@ public class Output {
 
     }
 
-    public void combat(String input, Equipment equipment, Combat combat, Player player, Enemy enemy, Inventory inventory) {
+    public void combat(String input, Weapon weapon, Combat combat, Player player, Enemy enemy, Inventory inventory) {
         System.out.println("");
         System.out.println((char) 27 + "[32m1; Attack! - " + player.getDmg() + " dmg");
 
-        if (equipment.isHasSpell()) {
+        if (weapon.isHasSpell()) {
             System.out.println((char) 27 + "[32m2; Use spell! - " + player.getWeapon().getSpellDmg() + " dmg");
         }
 
-        if (!equipment.isHasSpell()) {
+        if (!weapon.isHasSpell()) {
             System.out.println((char) 27 + "[31m2; Use spell");
         }
 
@@ -259,14 +284,14 @@ public class Output {
                 break;
 
             case "2":
-                if (equipment.isHasSpell()) {
+                if (weapon.isHasSpell()) {
                     combat.fight(player, enemy);
                 }
 
-                if (!equipment.isHasSpell()) {
+                if (!weapon.isHasSpell()) {
                     System.out.println((char) 27 + "[31mInvalid move");
                 }
-                combat(input, equipment, combat, player, enemy, inventory);
+                combat(input, weapon, combat, player, enemy, inventory);
                 break;
 
             case "3":
@@ -275,7 +300,7 @@ public class Output {
 
             default:
                 System.out.println("(char) 27 + \"[31mInvalid selection");
-                combat(input, equipment, combat, player, enemy, inventory);
+                combat(input, weapon, combat, player, enemy, inventory);
                 break;
 
         }
