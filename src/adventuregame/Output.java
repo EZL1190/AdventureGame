@@ -104,10 +104,12 @@ public class Output {
 
     public void Help() {
         System.out.println("You've asked for help, these are all the commands in the game:");
-        System.out.println("Type 'gold' to see how much gold you have.");
-        System.out.println("Type 'quit' to leave the game.");
-        System.out.println("You can go 4 directions, to go West type 'west', to go South type 'south' and so on. (West - Left, East - Right, North - Up, South - Down)");
-        System.out.println("As you might have figured out, sometimes you're not able to go a certain direction, try another and see where that might take you.");
+        System.out.println("'gold' - show amount of gold");
+        System.out.println("'quit' - quit the game");
+        System.out.println("'north'/'west'/'east'/'south' - to a direction North - Up, West - Left, East - Right, South - Down)");
+        System.out.println("'pickup'/'p' - to search for all items and pick them up");
+        System.out.println("'showinventory'/'sinv' - to show full inventory");
+        System.out.println("'changeweapon'/'cw' - to change between equipped weapon and one in the inventory");
     }
     
     public void changeWeapon()
