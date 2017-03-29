@@ -51,6 +51,10 @@ public class Output {
     public void commands(String input, Floor floor) {
         input = input.toLowerCase();
         switch (input) {
+            case "showinventory": case "sinv":
+                System.out.println(player.getInventory().showInventory());
+                playerInput(floor);
+                break;
             case "pickup": case "p":
                 pickup(floor);
                 playerInput(floor);

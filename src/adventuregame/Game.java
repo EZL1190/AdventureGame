@@ -88,7 +88,7 @@ public class Game
                 + "You say no thanks but ask them if they have some spare change for hungry traveler.\n"
                 + "Out of context they drop some sweet bars “Raindrops, drop tops”, you leave the room all confused and light headed."
         ));
-        floors.get("-1.3").setEnemy(new Enemy().spawnEnemy());
+        
         floors.put("0.3", new Floor(69, 0, 3, false, true, false, true,
                 "Name: The blacksmiths forgery\n"
                 + "This is the forgery of an old blacksmith, his origin remains unknown but he was a hard working fella.\n"

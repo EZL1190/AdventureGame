@@ -63,7 +63,7 @@ public class Inventory {
         items[n-1]=null;
     }
     
-    public String showInventory()
+    public String showItem()
     {
         String str = "";
         for(int i = 0; i < items.length; i++)
@@ -103,6 +103,42 @@ public class Inventory {
         potionCount++;
     }
     
+    public String showInventory()
+    {
+        String str = "";
+        str += "Weapons\n";
+        for(int i = 0; i < weapons.length; i++)
+        {
+            if(weapons[i] != null)
+            {
+                str += weapons[i].getName() + " dmg - " + weapons[i].getDmg();
+                if(weapons[i].getSpellDmg() != 0)
+                {
+                    str += " " + weapons[i].getName() + " spellDmg - " + weapons[i].getDmg() + " cooldown: " + weapons[i].getSpellCd();
+                }
+                str += "\n";
+            }
+        }
+        str += "\nItems\n";
+        for(int i = 0; i < items.length; i++)
+        {
+            if(items[i] != null)
+            {
+                str += items[i].getName();
+                str += "\n";
+            }
+        }
+        str += "\nPotions\n";
+        for(int i = 0; i < potions.length; i++)
+        {
+            if(potions[i] != null)
+            {
+                str += potions[i].getName();
+                str += "\n";
+            }
+        }
+        return str;
+    }
     
     
 }
