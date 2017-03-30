@@ -9,6 +9,7 @@ public class Weapon implements ItemsInferface
     String spellName;
     int spellDmg;
     int spellCd;
+    int cdCount = 0;
     boolean spellActive;
     
     Weapon(String name, int dmg, boolean lifeSteal, int lifeStealAmount, String spellName, int spellDmg, int spellCd, boolean spellActive)
@@ -21,6 +22,14 @@ public class Weapon implements ItemsInferface
         this.spellDmg = spellDmg;
         this.spellCd = spellCd;
         this.spellActive = spellActive;
+    }
+
+    public int getCdCount() {
+        return cdCount;
+    }
+
+    public void setCdCount(int cdCount) {
+        this.cdCount = cdCount;
     }
 
     public int getDmg() {
@@ -47,13 +56,18 @@ public class Weapon implements ItemsInferface
         return spellCd;
     }
 
-    public boolean isSpellActive() {
+    public void setSpellActive(boolean spellActive) {
+        this.spellActive = spellActive;
+    }
+    
+    public boolean getSpellActive()
+    {
         return spellActive;
     }
     
     public boolean isHasSpell()
     {
-        return spellName.equals("");
+        return !spellName.equals("");
     }
     
     @Override

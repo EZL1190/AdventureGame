@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Game 
 {
     boolean gameRunning;
-    Player player = new Player("player", 50, 50, 2, new Weapon("Rusty", 2, false, 0, "", 0, 0, false));
+    Player player = new Player("player", 50, 50, 2, new Weapon("Rusty", 2, false, 0, "Fireball", 10, 2, true));
     HashMap<String, Floor> floors = new HashMap<String, Floor>();
     Output output = new Output();
     Combat combat = new Combat(output);
@@ -39,7 +39,7 @@ public class Game
                 + "The room is grey, with multiple pieces of art around the walls the furniture is covered in white sheets to protect their value. "
         ));
         floors.get("0.1").setWeapon(new Weapon("Rusty3", 3, false, 0, "", 0, 0, false));
-        floors.get("0.1").setEnemy(new Enemy().spawnEnemy());
+        floors.get("0.1").setEnemy(new Enemy(50, 1, "Von", "boss"));
         
         floors.put("1.1", new Floor(15, 1, 1, true, true, false, false,
                 "Name: Watchmaker Hummels’ chamber\n"
@@ -177,7 +177,7 @@ public class Game
             if(floor.hasEnemy())
             {
                 combat.firstHit(player);
-                output.combatStart(floor.getEnemy());
+                output.combatStart(floor.getEnemy(), player);
                 output.combat("", player.getWeapon(), combat, player, floor.getEnemy(), player.getInventory());
                 if(player.getHp() <= 0)
                 {
@@ -187,7 +187,7 @@ public class Game
                 }
                 floor.setEnemy(null);
             }
-            
+            output.loot(floor);
             output.waysToGo(floor);
             output.playerInput(floor);
         }

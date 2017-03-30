@@ -252,7 +252,9 @@ public class Output {
         System.out.println((char) 27 + "[31mInvalid move.");
     }
 //Explains the enemy
-    public void combatStart(Enemy enemy) {
+    public void combatStart(Enemy enemy, Player player) {
+        player.getWeapon().setCdCount(0);
+        player.getWeapon().setSpellActive(true);
         System.out.println("\nYou've engaged an enemy!");
         System.out.println((char) 27 + "[31mEnemy"+(char) 27 + "[30m type: "+enemy.getName());
         System.out.println((char) 27 + "[31mEnemy"+(char) 27 + "[30m health: "+enemy.getHp());
@@ -267,9 +269,13 @@ public class Output {
     public void combat(String input, Weapon weapon, Combat combat, Player player, Enemy enemy, Inventory inventory) {
         System.out.println("");
         System.out.println((char) 27 + "[32m1; Attack! - " + player.getDmg() + " dmg");
-
-        if (weapon.isHasSpell()) {
+        if (weapon.isHasSpell() && weapon.getSpellActive()) {
             System.out.println((char) 27 + "[32m2; Use spell! - " + player.getWeapon().getSpellDmg() + " dmg");
+        }
+        
+        if(weapon.isHasSpell() && weapon.getSpellActive() == false)
+        {
+            System.out.println((char) 27 + "[31m2; Use spell! - " + player.getWeapon().getSpellDmg() + " dmg, cooldown " + weapon.getCdCount() + " turns");
         }
 
         if (!weapon.isHasSpell()) {
@@ -279,21 +285,37 @@ public class Output {
         System.out.println("3; Use item");
 
         input = userInput.nextLine();
+        
+        if(weapon.getSpellActive() == false && weapon.isHasSpell())
+        {
+            weapon.setCdCount(weapon.getCdCount()-1);
+            if(weapon.getCdCount() <= 0)
+                 weapon.setSpellActive(true);
+        }
 
         switch (input) {
             case "1":
-                combat.fight(player, enemy);
+                combat.fight(player, enemy, false);
                 break;
 
             case "2":
-                if (weapon.isHasSpell()) {
-                    combat.fight(player, enemy);
+                if (weapon.isHasSpell() && weapon.getSpellActive()) {
+                    weapon.setSpellActive(false);
+                    weapon.setCdCount(weapon.getSpellCd());
+                    combat.fight(player, enemy, true);
                 }
-
+                
+                if(weapon.isHasSpell() && weapon.getSpellActive() == false)
+                {
+                    System.out.println((char) 27 + "[31mInvalid move");
+                    weapon.setCdCount(weapon.getCdCount()+1);
+                    combat(input, weapon, combat, player, enemy, inventory);
+                }
+                
                 if (!weapon.isHasSpell()) {
                     System.out.println((char) 27 + "[31mInvalid move");
+                    combat(input, weapon, combat, player, enemy, inventory);
                 }
-                combat(input, weapon, combat, player, enemy, inventory);
                 break;
 
             case "3":
@@ -304,7 +326,6 @@ public class Output {
                 System.out.println("(char) 27 + \"[31mInvalid selection");
                 combat(input, weapon, combat, player, enemy, inventory);
                 break;
-
         }
     }
 

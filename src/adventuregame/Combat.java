@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package adventuregame;
 
 import java.util.Random;
 
-/**
- *
- * @author Shxnna
- */
 public class Combat {
     Output output;
     
@@ -19,10 +10,18 @@ public class Combat {
         this.output = output;
     }
     
-    public void fight(Player player, Enemy enemy)
+    public void fight(Player player, Enemy enemy, boolean spell)
     {
-        playerAttack(player, enemy);
-        output.fight(player.getDmg(), true, enemy.getHp());
+        if(spell == false)
+        {
+            playerAttack(player, enemy, false);
+            output.fight(player.getDmg(), true, enemy.getHp());
+        }
+        else
+        {
+            playerAttack(player, enemy, true);
+            output.fight(player.getWeapon().spellDmg, true, enemy.getHp());
+        }
         
         if(enemy.getHp() > 0)   
         {
@@ -41,10 +40,12 @@ public class Combat {
     }
     
     
-    public void playerAttack(Player player, Enemy enemy)
+    public void playerAttack(Player player, Enemy enemy, boolean spell)
     {
-        enemy.setHp(enemy.getHp()-player.getDmg());
-        
+        if(spell == false)
+            enemy.setHp(enemy.getHp()-player.getDmg());
+        else
+            enemy.setHp(enemy.getHp()-player.getWeapon().spellDmg);
     }
     
     public void enemyAttack(Player player, Enemy enemy)

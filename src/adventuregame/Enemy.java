@@ -7,10 +7,6 @@ package adventuregame;
 
 import java.util.Random;
 
-/**
- *
- * @author Shxnna
- */
 //We can make random enemies, but we can also make a specific enemy with stats that we choose¿
 public class Enemy {
     Random rand = new Random();
@@ -23,7 +19,7 @@ public class Enemy {
     private int maxDamage = 15;
     
     
-    public void Enemy(int hp, int damage, String name, String type) {
+    Enemy(int hp, int damage, String name, String type) {
         this.hp = hp;
         this.damage = damage;
         this.name = name;
@@ -42,6 +38,7 @@ public class Enemy {
         return this.name;
         
     }
+    
     public int getHp() {
         return hp;
     }
