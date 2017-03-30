@@ -16,7 +16,7 @@ public class Weapon implements ItemsInferface
         this.name = name;
         this.dmg = dmg;
         this.lifeSteal = lifeSteal;
-        this.lifeStealAmount = this.lifeStealAmount;
+        this.lifeStealAmount = lifeStealAmount;
         this.spellName = spellName;
         this.spellDmg = spellDmg;
         this.spellCd = spellCd;

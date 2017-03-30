@@ -27,7 +27,6 @@ public class Enemy {
         this.hp = hp;
         this.damage = damage;
         this.name = name;
-        //this.type = type;
     }
     
     public Enemy spawnEnemy()
