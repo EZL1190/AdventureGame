@@ -273,7 +273,7 @@ public class Output {
             System.out.println((char) 27 + "[32m2; Use spell! - " + player.getWeapon().getSpellDmg() + " dmg");
         }
         
-        if(weapon.isHasSpell() && weapon.getSpellActive() == false)
+        if(weapon.isHasSpell() && !weapon.getSpellActive())
         {
             System.out.println((char) 27 + "[31m2; Use spell! - " + player.getWeapon().getSpellDmg() + " dmg, cooldown " + weapon.getCdCount() + " turns");
         }
@@ -303,9 +303,7 @@ public class Output {
                     weapon.setSpellActive(false);
                     weapon.setCdCount(weapon.getSpellCd());
                     combat.fight(player, enemy, true);
-                }
-                
-                if(weapon.isHasSpell() && weapon.getSpellActive() == false)
+                } else if(weapon.isHasSpell() && weapon.getSpellActive() == false)
                 {
                     System.out.println((char) 27 + "[31mInvalid move");
                     weapon.setCdCount(weapon.getCdCount()+1);

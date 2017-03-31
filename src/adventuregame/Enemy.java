@@ -19,10 +19,11 @@ public class Enemy {
     private int maxDamage = 15;
     
     
-    Enemy(int hp, int damage, String name, String type) {
+    public Enemy makeEnemy(int hp, int damage, String name, String type) {
         this.hp = hp;
         this.damage = damage;
         this.name = name;
+        return this;
     }
     
     public Enemy spawnEnemy()

@@ -39,7 +39,7 @@ public class Game
                 + "The room is grey, with multiple pieces of art around the walls the furniture is covered in white sheets to protect their value. "
         ));
         floors.get("0.1").setWeapon(new Weapon("Rusty3", 3, false, 0, "", 0, 0, false));
-        floors.get("0.1").setEnemy(new Enemy(50, 1, "Von", "boss"));
+        floors.get("0.1").setEnemy(new Enemy().makeEnemy(50, 1, "Von", "boss"));
         
         floors.put("1.1", new Floor(15, 1, 1, true, true, false, false,
                 "Name: Watchmaker Hummels’ chamber\n"
