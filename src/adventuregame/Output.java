@@ -23,6 +23,7 @@ public class Output {
     public void loot(Floor floor) {
         System.out.println("\nYou have looted " + floor.getGold() + " gold from this room");
         int gold = floor.getGold() + player.getGold();
+        player.setGold(gold);
         System.out.println("You have " + gold + " gold in total\n");
     }
 
