@@ -7,6 +7,7 @@ public class Output {
     Scanner userInput = new Scanner(System.in);
     Game game;
     Player player;
+    
 
     public void setGame(Game game) {
         this.game = game;
@@ -397,5 +398,8 @@ public class Output {
         
         System.out.println("You now have " + player.getHp() + " hp\n");
     }
-    
+    public String playerName() {
+        String name = userInput.nextLine();
+        return name;
+    }
 }

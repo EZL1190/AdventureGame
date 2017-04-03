@@ -13,8 +13,8 @@ public class Combat {
     public void fight(Player player, Enemy enemy, boolean spell)
     {
         if(spell == false)
-        {
-            playerAttack(player, enemy, false);
+        { 
+           playerAttack(player, enemy, false);
             output.fight(player.getDmg(), true, enemy.getHp());
         }
         else
