@@ -68,13 +68,13 @@ public class Boundary
         {
             System.out.println("You took " + dmg + " dmg");
             if(hp <= 0)
-                System.out.println("You died");
+                System.out.println((char) 27 + "[31mYou died");
             else
                 System.out.println("You have " + hp + " hp left");
         }
     }
     
-    public void lostFight(){System.out.println("You lost the fight");}
+    public void lostFight(){System.out.println((char) 27 + "[31mYou lost the fight");}
     public void wonFight(){System.out.println("You won the fight");}
     public void gameOver(){System.out.println("\nYou lost gameover");}
     
@@ -216,7 +216,7 @@ public class Boundary
                 System.out.println("\n");
                 if(player.getInventory().maxWeapons())
                 {
-                    System.out.println("Uou have found " + floor.getWeapon().getName() + " - " + floor.getWeapon().getDmg() + " dmg");
+                    System.out.println("You have found " + floor.getWeapon().getName() + " - " + floor.getWeapon().getDmg() + " dmg");
                     System.out.println("You can't hold anymore weapons, drop a weapon y/n?");
                     String str = userInput.nextLine();
                     if(str.equals("y") || str.equals("yes"))
@@ -242,7 +242,7 @@ public class Boundary
                                     validate = true;
                                     break;
                                 default:
-                                    System.out.println("Invalid entry");
+                                    System.out.println("(char) 27 + \"[31mInvalid entry");
                                     break;
                             }
                         }
@@ -285,7 +285,7 @@ public class Boundary
                             validate = true;
                             break;
                         default:
-                            System.out.println("Invalid entry");
+                            System.out.println("(char) 27 + \"[31mInvalid entry");
                             break;
                     }
                 }
