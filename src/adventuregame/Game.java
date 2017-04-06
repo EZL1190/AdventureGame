@@ -17,13 +17,23 @@ public class Game
         //Here we make the floors from the predesigned map, giving them locations, gold enemies and a storyline. We also control which doorways are open and such.
         gameRunning = true;
         floors.put("0.0", new Floor(0, 0, 0, true, false, false, false,
-                "Name: Start room\n"
-                + "You’re standing in a bright hallway, and the door behind you just closed.\n"
-                + "You’ve tried to open it, but it’s stuck. There’s only one thing to do, you must proceed forward.\n"
-                + "Unless you’re a pussy, then there’s a vent up to the left, just type ‘quit’ and get out of this badass dungeon.\n"
-                        + "If you at any point need help, try the help command 'help'"
+        "Name: Start room\n"
+        + "You’re standing in a bright hallway, and the door behind you just closed.\n"
+        + "You’ve tried to open it, but it’s stuck. There’s only one thing to do, you must proceed forward.\n"
+        + "Unless you’re a pussy, then there’s a vent up to the left, just type ‘quit’ and get out of this badass dungeon.\n"
+        + "If you at any point need help, try the help command 'help'"
         ));
-        
+
+        floors.put("-2.1", new Floor(20, -2, 1, true, false, true, false,
+
+                "Name: MingLee’s Asian Supermarket\n" 
+                + "You’ve entered the infamous MingLee’s supermarket, this place was filled with delicious specialties from the Asian culture.\n"
+                + "The supermarket went bankrupt as soon as MingLee was killed by a horde of enemies.\n"
+                + "What remains of his shop is guarded by those enemies who ruined his beautiful shop.\n"
+                + "The smell is strong, all the different spices combining to make an odor so strong that only Zombies would be able to survive in here." 
+        ));
+        floors.get("-2.1").setWeapon(new Weapon("Rusty5", 3, false, 0, "", 0, 0, false));
+
         floors.put("-1.1", new Floor(0, -1, 1, false, true, true, false,
                 "Name: Ham room\n"
                 + "The room you just entered is freezing cold and there’s a weird smell. The floor is wet and the walls are covered in blue tiles.\n"
@@ -32,7 +42,7 @@ public class Game
                 + "There’s said to be a curse in this room that might change the way you look."
         ));
         floors.get("-1.1").setWeapon(new Weapon("Rusty2", 3, false, 0, "", 0, 0, false));
-        
+
         floors.put("0.1", new Floor(5, 0, 1, true, true, true, false,
                 "Name: Lord von Apache’s treasure room\n"
                 + "This is the room of Lord von Apache, what you see here is the remains of him, there wasn’t a lot but it’s a start.\n"
@@ -40,7 +50,7 @@ public class Game
         ));
         floors.get("0.1").setWeapon(new Weapon("Rusty3", 3, false, 0, "", 0, 0, false));
         floors.get("0.1").setEnemy(new Enemy().makeEnemy(50, 1, "Von", "boss"));
-        
+
         floors.put("1.1", new Floor(15, 1, 1, true, true, false, false,
                 "Name: Watchmaker Hummels’ chamber\n"
                 + "The door is heavy and you’re pushing it with all you’ve got, the door is old and making a lot of noise.\n"
@@ -48,7 +58,17 @@ public class Game
                 + "There’s a sudden flash before your eyes, it’s the old watchmaker Sir. Hummels.\n"
                 + "He’s pointing towards the lamp in the left corner of the room. You decide to check the lamp and find a bunch of coins. "
         ));
-        
+
+        floors.put("-2.2", new Floor(45, -2, 2, true, false, false, true,
+
+                "Name: The programmer’s bungalow\n" 
+                + "You’ve entered the room of the most hardworking coders in this universe, these two incredible programmers have been working all week to accomplish the almighty creators wicked ideas.\n"
+                + "You’ve disturbed them in their making of the next evolution of TAG, for this you will be punished.\n"
+                + "Because of their non-stop hard work, these students have become Zombies with an unfulfilled hunger for study points.\n"
+                + "You must give them their well-earned study points, to make it out of this maze." 
+        ));
+        floors.get("-2.2").setWeapon(new Weapon("Rusty4", 3, false, 0, "", 0, 0, false));
+
         floors.put("-1.2", new Floor(13, -1, 2, false, true, false, false,
                 "Name: The yard of knowledge\n"
                 + "You’ve found your way outside, you’re now standing in the yard of knowledge, it says that this yard contains all the knowledge of senpai Ronnie.\n"
@@ -57,7 +77,7 @@ public class Game
                 + "Whatever you want to do."
         ));
         floors.get("-1.2").setWeapon(new Weapon("Rusty4", 3, false, 0, "", 0, 0, false));
-        
+
         floors.put("0.2", new Floor(50, 0, 2, true, false, true, true,
                 "Name: The hiding closet of Lucas Kuhn\n" 
                 + "Go back, hurry it’s a trap. Nah man just kidding, it’s safe in here… Trust me.\n"
@@ -67,8 +87,7 @@ public class Game
                 + "Some people say he was acting as a maniac at day and a pimp at night, if you look closely you might find items of high value.\n"
                 + "This closet has secret exits, try and find your way out before the maniac Kuhn gets back."
         ));
-        
-        
+
         floors.put("1.2", new Floor(7, 1, 2, true, true, false, true,
                 "Name: Hall of ghosts\n" 
                 + "You’ve entered a hall which is completely dark, you’re fumbling your way through the hall and stumbling across some sharp edges, what could this be?\n"
@@ -79,7 +98,16 @@ public class Game
                 + "You hear the sound of an instrument starting to play, a piano to be exact.\n"
                 + "This place doesn’t seem to have any valuables, except that small gold bar over there, quickly grab it!"
         ));
-        
+
+        floors.put("-2.3", new Floor(100, -2, 3, false, false, true, true,
+
+                "Name:  The Vosserfall \n" 
+                + "Would you look at that! It’s the Vosserfall, the world’s largest waterfall, named after the legend himself, the almighty creator of this universe.\n"
+                + "The water falls in such elegance you’ve never seen before, the water is crystal clear.\n"
+                + "Heaven is as blue as the sea, no skies in sight and the sun has never shined brighter upon you.\n"
+                + "The beautiful environment has cleansed your soul and regained all your lost stats." 
+        ));
+
         floors.put("-1.3", new Floor(25, -1, 3, false, true, true, true,
                 "Name: The room of Migos\n"
                 + "There’s a tune playing, the room is filled with smoke. The rhythm is bad, some might even say boujee.\n"
@@ -89,7 +117,7 @@ public class Game
                 + "You say no thanks but ask them if they have some spare change for hungry traveler.\n"
                 + "Out of context they drop some sweet bars “Raindrops, drop tops”, you leave the room all confused and light headed."
         ));
-        
+
         floors.put("0.3", new Floor(69, 0, 3, false, true, false, true,
                 "Name: The blacksmiths forgery\n"
                 + "This is the forgery of an old blacksmith, his origin remains unknown but he was a hard working fella.\n"
@@ -100,63 +128,38 @@ public class Game
                 + "The real value of the sword is unknown, but maybe it’s worth a shot visiting the nice shopkeeper?\n" +
                 "Hint: It is… Go there right now."
         ));
-        floors.put("-2.4", new Floor(1337, -2, 4, false, false, false, false,
-                "Name: The great hall of memes\n"
-                + "Congratulations dear traveler, you’ve now made your way to the end of this amazing maze..\n"
-                + "Sounds like amazing graze doesn’t it? Anyhow, you’ve been rewarded for your endurance and great spirit.\n"
-                + "We would like to give you some kind of token of appreciation, but all we got is gold so here you go."
-        ));
-        floors.put("-2.1", new Floor(20, -2, 1, true, false, true, false,
-                
-                "Name: MingLee’s Asian Supermarket\n" 
-                + "You’ve entered the infamous MingLee’s supermarket, this place was filled with delicious specialties from the Asian culture.\n"
-                + "The supermarket went bankrupt as soon as MingLee was killed by a horde of enemies.\n"
-                + "What remains of his shop is guarded by those enemies who ruined his beautiful shop.\n"
-                + "The smell is strong, all the different spices combining to make an odor so strong that only Zombies would be able to survive in here." 
-        ));
-        floors.get("-2.1").setWeapon(new Weapon("Rusty5", 3, false, 0, "", 0, 0, false));
-        
-        floors.put("-2.2", new Floor(45, -2, 2, true, false, false, true,
-                
-                "Name: The programmer’s bungalow\n" 
-                + "You’ve entered the room of the most hardworking coders in this universe, these two incredible programmers have been working all week to accomplish the almighty creators wicked ideas.\n"
-                + "You’ve disturbed them in their making of the next evolution of TAG, for this you will be punished.\n"
-                + "Because of their non-stop hard work, these students have become Zombies with an unfulfilled hunger for study points.\n"
-                + "You must give them their well-earned study points, to make it out of this maze." 
-        ));
-        floors.get("-2.2").setWeapon(new Weapon("Rusty4", 3, false, 0, "", 0, 0, false));
-        
-        floors.put("-2.3", new Floor(100, -2, 3, false, false, true, true,
-                
-                "Name:  The Vosserfall \n" 
-                + "Would you look at that! It’s the Vosserfall, the world’s largest waterfall, named after the legend himself, the almighty creator of this universe.\n"
-                + "The water falls in such elegance you’ve never seen before, the water is crystal clear.\n"
-                + "Heaven is as blue as the sea, no skies in sight and the sun has never shined brighter upon you.\n"
-                + "The beautiful environment has cleansed your soul and regained all your lost stats." 
-        ));
+
         floors.put("1.3", new Floor(12, 1, 3, true, false, false, true,
-                
+
                 "Name: Childhood home\n" 
                 + "In some weird way, you’ve ended up in your childhood home, this place is filled with memories.\n"
                 + "I’m sure you know your way around this place better than I do. \n"
                 + "Have a look around and see if you can find any valuables to help you along the way of this impressive maze. \n" +
                 "Got it? Nice, let’s move along. " 
         ));
+
+        floors.put("-2.4", new Floor(1337, -2, 4, false, false, false, false,
+                "Name: The great hall of memes\n"
+                + "Congratulations dear traveler, you’ve now made your way to the end of this amazing maze..\n"
+                + "Sounds like amazing graze doesn’t it? Anyhow, you’ve been rewarded for your endurance and great spirit.\n"
+                + "We would like to give you some kind of token of appreciation, but all we got is gold so here you go."
+        ));
+
         floors.put("-1.4", new Floor(420, -1, 4, false, true, true, false,
-                
+
                 "Name: Sindragosa’s lair \n" 
                 + "It seems like you’ve entered the lair of Sindragosa, Sindragosa is a mighty frost wyrm who once ruled the world. \n"
                 + "Before Sindragosa will even look upon your weak body, you must defeat her goblin servants first.\n"
                 + "The easiest way to kill them is to use an AoE attack, sadly this game isn’t in that stage yet, so you’ll have to take them out one by one. "
         ));
         floors.put("0.4", new Floor(47, 0, 4, false, true, true, false,
-                
+
                 "Name: Lord von Apache’s kitchen\n"
                 + "You’ve discovered another location of Lord von Apache! This is said to be his ‘kitchen’ or armory, whatever you prefer.\n"
                 + "You might be able to find some equipment that will become handy within the next few moves. ‘Spoiler alert!’ " 
         ));
         floors.put("1.4", new Floor(0, 1, 4, false, true, false, true,
-                
+
                 "Name: The home of your middle school teacher\n" 
                 + "Remember that teacher you had a crush on in middle school? \n" 
                 + "We’re now in her home, look at all these cats, she must be a little lonely huh?\n" 
