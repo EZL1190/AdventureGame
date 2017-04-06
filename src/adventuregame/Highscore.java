@@ -15,7 +15,7 @@ import java.io.IOException;
  * @author Shxnna
  */
 public class Highscore {
-    public void Highscore(Player player){
+    public void Highscore(PlayerV2 player){
      try {
             FileWriter writer = new FileWriter("Scores", true);
             writer.write("score: "+player.getGold());

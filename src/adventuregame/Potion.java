@@ -4,7 +4,7 @@ public class Potion implements ItemsInferface
 {
 
     @Override
-    public void pickUp(Player player) 
+    public void pickUp(PlayerV2 player) 
     {
         player.getInventory().addPotion(this);
     }

@@ -17,6 +17,7 @@ public class Enemy {
     private String[] type = {"Skeleton", "Zombie", "Goblin"};
     private int maxHp = 25;
     private int maxDamage = 15;
+    private Loot loot;
     
     
     public Enemy makeEnemy(int hp, int damage, String name, String type) {
@@ -34,26 +35,13 @@ public class Enemy {
         return this;
     }
 
-    public String getName()
-    {
-        return this.name;
-        
-    }
+    public String getName(){return this.name;}
+    public int getHp(){return hp;}
+    public int getDamage(){return damage;}
+    public Loot getLoot(){return loot;}
     
-    public int getHp() {
-        return hp;
-    }
-
-    public void setHp(int hp) {
-        this.hp = hp;
-    }
-
-    public int getDamage() {
-        return damage;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
+    public void setHp(int hp){this.hp = hp;}
+    public void setDamage(int damage){this.damage = damage;}
+    public void setLoot(Loot loot){this.loot = loot;}
     
 }

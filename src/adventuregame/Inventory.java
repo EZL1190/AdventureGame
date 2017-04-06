@@ -1,7 +1,7 @@
 package adventuregame;
 
 public class Inventory {
-    private Weapon[] weapons = new Weapon[3];
+    private WeaponV2[] weapons = new WeaponV2[3];
     private Item[] items = new Item[3];
     private Potion[] potions = new Potion[3];
     
@@ -24,12 +24,12 @@ public class Inventory {
         return potionCount >= potions.length;
     }
     
-    public Weapon[] getWeapons() 
+    public WeaponV2[] getWeapons() 
     {
         return weapons;
     }
 
-    public void addWeapon(Weapon weapon) 
+    public void addWeapon(WeaponV2 weapon) 
     {
         this.weapons[weaponCount] = weapon;
         weaponCount++;
@@ -112,10 +112,6 @@ public class Inventory {
             if(weapons[i] != null)
             {
                 str += "'" + weapons[i].getName() + "' dmg - " + weapons[i].getDmg();
-                if(weapons[i].getSpellDmg() != 0)
-                {
-                    str += " '" + weapons[i].getName() + "' spellDmg - " + weapons[i].getDmg() + " cooldown: " + weapons[i].getSpellCd();
-                }
                 str += "\n";
             }
         }
@@ -140,9 +136,9 @@ public class Inventory {
         return str;
     }
     
-    public void changeWeapon(Player player, int i)
+    public void changeWeapon(PlayerV2 player, int i)
     {
-        Weapon tmp = player.getWeapon();
+        WeaponV2 tmp = player.getWeapon();
         if(weapons[i] != null)
             player.equpipWeapon(weapons[i]);
         else

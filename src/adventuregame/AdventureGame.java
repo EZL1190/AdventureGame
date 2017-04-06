@@ -2,8 +2,8 @@ package adventuregame;
 //Starts the game
 public class AdventureGame {
     public static void main(String[] args) {
-        Game game = new Game();
-        game.Start(); 
+        GameV2 game = new GameV2();
+        game.start(); 
     }
     
 }
