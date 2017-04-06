@@ -4,11 +4,11 @@ import java.util.HashMap;
 
 public class GameV2 
 {
-    boolean gameRunning = true;
-    HashMap<String, FloorV2> floors = new HashMap<String, FloorV2>();
-    PlayerV2 player = new PlayerV2(100, 100, 2);
-    Boundary boundary = new Boundary();
-    CombatV2 combat = new CombatV2(boundary);
+    private boolean gameRunning = true;
+    private HashMap<String, FloorV2> floors = new HashMap<String, FloorV2>();
+    private PlayerV2 player = new PlayerV2(100, 100, 2);
+    private Boundary boundary = new Boundary();
+    private CombatV2 combat = new CombatV2(boundary);
     
     public void start()
     {
@@ -21,6 +21,12 @@ public class GameV2
             FloorV2 floor = floors.get(player.getPosition());
             boundary.floorDescription(floor);
             // if(player.getPosition().equals("")){//sout("win game") gameRunning = false, continue;}
+            if(player.getPosition().equals("-2.4"))
+            {
+                boundary.wonGame();
+                gameRunning = false;
+                continue;
+            }
             if(floor.getEnemy() != null)
             {
                 combat.firstHit(player, boundary);
@@ -73,9 +79,6 @@ public class GameV2
                 + "This is the room of Lord von Apache, what you see here is the remains of him, there wasn’t a lot but it’s a start.\n"
                 + "The room is grey, with multiple pieces of art around the walls the furniture is covered in white sheets to protect their value. "
         ));
-        floors.get("0.1").setEnemy(new Enemy().spawnEnemy());
-        floors.get("0.1").getEnemy().setLoot(new Loot().setLoot(100));
-        floors.get("0.1").getEnemy().setLoot(new Loot().setLoot(new WeaponV2("Sword Of Zelda", 100)));
 
         floors.put("1.1", new FloorV2(15, 1, 1, true, true, false, false,
                 "Name: Watchmaker Hummels’ chamber\n"
@@ -176,12 +179,17 @@ public class GameV2
                 + "Before Sindragosa will even look upon your weak body, you must defeat her goblin servants first.\n"
                 + "The easiest way to kill them is to use an AoE attack, sadly this game isn’t in that stage yet, so you’ll have to take them out one by one. "
         ));
+        floors.get("-1.4").setEnemy(new Enemy().makeEnemy(200, 10, "Meme King", "Meme"));
+        floors.get("-1.4").getEnemy().setLoot(new Loot().setLoot(10000));
+        
+        
         floors.put("0.4", new FloorV2(47, 0, 4, false, true, true, false,
 
                 "Name: Lord von Apache’s kitchen\n"
                 + "You’ve discovered another location of Lord von Apache! This is said to be his ‘kitchen’ or armory, whatever you prefer.\n"
                 + "You might be able to find some equipment that will become handy within the next few moves. ‘Spoiler alert!’ " 
         ));
+        
         floors.put("1.4", new FloorV2(0, 1, 4, false, true, false, true,
 
                 "Name: The home of your middle school teacher\n" 
@@ -189,5 +197,9 @@ public class GameV2
                 + "We’re now in her home, look at all these cats, she must be a little lonely huh?\n" 
                 + "Wait, what the hell is that over there? Is that one of Lucas Kuhn’s tools!" 
         ));
+        floors.get("1.4").setEnemy(new Enemy().makeEnemy(20, 5, "WeekAss Zelda", "Game"));
+        floors.get("1.4").getEnemy().setLoot(new Loot().setLoot(new WeaponV2("Sword Of Zelda", 100)));
     }
+    
+    public void setGameRunning(Boolean gameRunning){this.gameRunning = gameRunning;}
 }

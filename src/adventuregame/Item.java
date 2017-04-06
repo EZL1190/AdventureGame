@@ -2,12 +2,10 @@ package adventuregame;
 
 public class Item implements ItemsInferface
 {
-    boolean won;
-    String name;
+    private String name;
     
-    Item(boolean won, String name)
+    Item(String name)
     {
-        this.won = won;
         this.name = name;
     }
 
@@ -27,9 +25,6 @@ public class Item implements ItemsInferface
     {
         switch(name)
         {
-            case "won":
-                game.gameRunning = false;
-                break;
         }
     }
 

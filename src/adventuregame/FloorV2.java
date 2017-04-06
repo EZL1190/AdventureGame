@@ -4,8 +4,8 @@ public class FloorV2
 {
 
     private int gold;
-    int x;
-    int y;
+    private int x;
+    private int y;
     private boolean northExist;
     private boolean westExist;
     private boolean eastExist;

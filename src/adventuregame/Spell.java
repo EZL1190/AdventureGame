@@ -1,11 +1,11 @@
 package adventuregame;
 
 public class Spell {
-    Boolean hasSpell;
-    String name;
-    int dmg;
-    int cd;
-    int cdCount;
+    private Boolean hasSpell;
+    private String name;
+    private int dmg;
+    private int cd;
+    private int cdCount;
     
     Spell(String name, int dmg, int cd)
     {

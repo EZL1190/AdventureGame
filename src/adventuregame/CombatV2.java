@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class CombatV2 {
     
-    Boundary boundary;
+    private Boundary boundary;
     
     public CombatV2(Boundary boundary){this.boundary = boundary;}
     

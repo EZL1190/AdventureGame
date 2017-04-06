@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Boundary 
 {
-    PlayerV2 player;
-    GameV2 game;
-    Scanner userInput = new Scanner(System.in);
+    private PlayerV2 player;
+    private GameV2 game;
+    private Scanner userInput = new Scanner(System.in);
     
     public void setPlayer(PlayerV2 player){this.player = player;}
     public void setGame(GameV2 game){this.game = game;}
@@ -90,7 +90,7 @@ public class Boundary
         if(enemy.getLoot().getGold() != 0)
         {
             player.setGold(player.getGold() + enemy.getLoot().getGold());
-            System.out.println("Enemey droped " + enemy.getLoot().getGold() + "gold");
+            System.out.println("Enemey droped " + enemy.getLoot().getGold() + " gold");
         }
     }
     
@@ -319,7 +319,7 @@ public class Boundary
     public void quit() {
         System.out.println("I guess you were too scared to make your way through this amazing maze, I guess it was all to much for a weak spirit like you.\n"
                 + "I never really expected you to enter the door anyways, I was surprised to see a pleb like you enter this wonderful game.");
-        game.gameRunning = false;
+        game.setGameRunning(false);
     }
 
     public void west(FloorV2 floor){player.m_West(floor, this);}
@@ -327,4 +327,9 @@ public class Boundary
     public void south(FloorV2 floor){player.m_South(floor, this);}
     public void north(FloorV2 floor){ player.m_North(floor, this);}
     public void gold(){ System.out.println((char) 27 + "[33mGold:" + player.getGold());}
+    
+    public void wonGame()
+    {
+        System.out.println("Won game!!!! text something....!!");
+    }
 }

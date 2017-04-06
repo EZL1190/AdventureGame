@@ -1,8 +1,8 @@
 package adventuregame;
 
 public class WeaponV2 implements ItemsInferface{
-    String name;
-    int dmg;
+    private String name;
+    private int dmg;
     
     WeaponV2(String name, int dmg)
     {

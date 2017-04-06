@@ -2,10 +2,10 @@ package adventuregame;
 
 public class Loot 
 {
-    WeaponV2 weapon;
-    Item item;
-    Potion potion;
-    int gold = 0;
+    private WeaponV2 weapon;
+    private Item item;
+    private Potion potion;
+    private int gold = 0;
     
     public Loot setLoot(WeaponV2 weapon){this.weapon = weapon; return this;}
     public Loot setLoot(Item item){this.item = item; return this;}
