@@ -50,7 +50,8 @@ public class Boundary
         System.out.println("");   
         System.out.println((char) 27 + "[32m1; Attack! - " + player.getDmg() + " dmg");
         if(player.getSpell() == null){System.out.println((char) 27 + "[31m2; Use spell");}
-        else{System.out.println((char) 27 + "[32m2; Use spell - " + player.getSpell().getDmg() + " dmg");}
+        else if(player.getSpell() != null && player.getSpell().getCdCount() <= 0){System.out.println((char) 27 + "[32m2; Use spell " + player.getSpell().getName() + " - " + player.getSpell().getDmg() + " dmg");}
+        else{System.out.println((char) 27 + "[31m2; Use spell " + player.getSpell().getName() + " - " + player.getSpell().getDmg() + " dmg - Cooldown " + player.getSpell().getCdCount() + " turns");}
         System.out.println((char) 27 + "[31m3; Use item - comming soon");
     }
     
@@ -80,7 +81,10 @@ public class Boundary
     
     public void drop(Enemy enemy, PlayerV2 player)
     {
-        if(enemy.getLoot().getWeapon()!= null){}
+        if(enemy.getLoot().getWeapon()!= null)
+        {
+            pickup(enemy.getLoot().getWeapon());
+        }
         if(enemy.getLoot().getItem()!= null){}
         if(enemy.getLoot().getPotion() != null){}
         if(enemy.getLoot().getGold() != 0)
@@ -256,49 +260,59 @@ public class Boundary
                 }
             }
         }
-        if(floor.getItem() != null)
+        if(floor.getItem() != null){}
+        if(floor.getPotion() != null){}
+    }
+    
+    void pickup(WeaponV2 weapon)
+    {
+        if(player.getWeapon() == null)
         {
+            player.equpipWeapon(weapon);
+            System.out.println("You have picked up and equiped " + weapon.getName() + " - " + weapon.getDmg() + " dmg");
+        }
+        else
+        {
+            System.out.println("\n");
             if(player.getInventory().maxWeapons())
-         {
-             System.out.println("You can't hold anymore weapons, drop a weapon y/n?");
-             String str = userInput.nextLine();
-             if(str.equals("y") || str.equals("yes"))
-             {
-                boolean validate = false;
-                while(!validate)
+            {
+                System.out.println("You have found " + weapon.getName() + " - " + weapon.getDmg() + " dmg");
+                System.out.println("You can't hold anymore weapons, drop a weapon y/n?");
+                String str = userInput.nextLine();
+                if(str.equals("y") || str.equals("yes"))
                 {
-                    System.out.println("Which one will you drop?");
-                    player.getInventory().showInventory();
-                    str = userInput.nextLine();
-                    switch(str)
+                    boolean validate = false;
+                    while(!validate)
                     {
-                        case "1":
-                            player.getInventory().dropItem(1);
-                            validate = true;
-                            break;
-                        case "2":
-                            player.getInventory().dropItem(2);
-                            validate = true;
-                            break;
-                        case "3":
-                            player.getInventory().dropItem(3);
-                            validate = true;
-                            break;
-                        default:
-                            System.out.println("(char) 27 + \"[31mInvalid entry");
-                            break;
+                        System.out.println("Which one will you drop?");
+                        System.out.println(player.getInventory().showWeapons());
+                        str = userInput.nextLine();
+                        switch(str)
+                        {
+                            case "1":
+                                player.getInventory().dropWeapon(1);
+                                validate = true;
+                                break;
+                            case "2":
+                                player.getInventory().dropWeapon(2);
+                                validate = true;
+                                break;
+                            case "3":
+                                player.getInventory().dropWeapon(3);
+                                validate = true;
+                                break;
+                            default:
+                                System.out.println("(char) 27 + \"[31mInvalid entry");
+                                break;
+                        }
                     }
                 }
-             }
-         }
-         else
-         {
-             floor.getItem().pickUp(player);
-             floor.setItem(null);
-         }
-        }
-        if(floor.getPotion() != null)
-        {
+            }
+            else
+            {
+                System.out.println((char)27 + "[36mYou have picked up " + weapon.getName());
+                weapon.pickUp(player);
+            }
         }
     }
 
@@ -308,9 +322,9 @@ public class Boundary
         game.gameRunning = false;
     }
 
-    public void west(FloorV2 floor){player.m_West(floor);}
-    public void east(FloorV2 floor){player.m_East(floor);}
-    public void south(FloorV2 floor){player.m_South(floor);}
-    public void north(FloorV2 floor){ player.m_North(floor);}
+    public void west(FloorV2 floor){player.m_West(floor, this);}
+    public void east(FloorV2 floor){player.m_East(floor, this);}
+    public void south(FloorV2 floor){player.m_South(floor, this);}
+    public void north(FloorV2 floor){ player.m_North(floor, this);}
     public void gold(){ System.out.println((char) 27 + "[33mGold:" + player.getGold());}
 }

@@ -22,10 +22,15 @@ public class CombatV2 {
     
     public void fight(PlayerV2 player, Enemy enemy, boolean spell)
     {
+        if(player.getSpell().getCdCount() > 0)
+            player.getSpell().setCdCount(player.getSpell().getCdCount()-1);
         if(!spell)
             playerAttack(player, enemy, false);
-        else
+        else if(spell && player.getSpell().getCdCount() <= 0)
+        {
+            player.getSpell().setCdCount(player.getSpell().getCd());
             playerAttack(player, enemy, true);
+        }
         
         if(enemy.getHp() > 0)   
             enemyAttack(player, enemy);

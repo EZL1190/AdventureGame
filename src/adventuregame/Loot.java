@@ -7,10 +7,10 @@ public class Loot
     Potion potion;
     int gold = 0;
     
-    public void setLoot(WeaponV2 weapon){this.weapon = weapon;}
-    public void setLoot(Item item){this.item = item;}
-    public void setLoot(Potion potion){this.potion = potion;}
-    public void setLoot(int gold){this.gold = gold;}
+    public Loot setLoot(WeaponV2 weapon){this.weapon = weapon; return this;}
+    public Loot setLoot(Item item){this.item = item; return this;}
+    public Loot setLoot(Potion potion){this.potion = potion; return this;}
+    public Loot setLoot(int gold){this.gold = gold; return this;}
     
     public WeaponV2 getWeapon(){return weapon;}
     public Item getItem(){return item;}

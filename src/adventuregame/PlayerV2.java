@@ -26,6 +26,7 @@ public class PlayerV2
     public void setHp(int hp){this.hp = hp;}
     public void setGold(int gold){this.gold = gold;}
     public void setPosition(){position = xPosition +"."+yPosition;}
+    public void setSpell(Spell spell){this.spell = spell;}
     
     public int getHp(){return hp;}
     public int getDmg(){return dmg;}
@@ -55,7 +56,7 @@ public class PlayerV2
         }
     }
     
-    public void m_North(FloorV2 floor)
+    public void m_North(FloorV2 floor, Boundary boundary)
     {
         if(floor.isNorthExist())
         {
@@ -64,10 +65,11 @@ public class PlayerV2
         }
         else 
         {
-            System.out.println("Error invalid move.");
+            System.out.println((char) 27 + "[31mError invalid move.");
+            boundary.playerInput(floor);
         }
     }
-    public void m_East(FloorV2 floor)
+    public void m_East(FloorV2 floor, Boundary boundary)
     {
         if(floor.isEastExist())
         {
@@ -76,10 +78,11 @@ public class PlayerV2
         }
         else 
         {
-            System.out.println("Error invalid move.");
+            System.out.println((char) 27 + "[31mError invalid move.");
+            boundary.playerInput(floor);
         }
     }
-    public void m_South(FloorV2 floor)
+    public void m_South(FloorV2 floor, Boundary boundary)
     {
         if(floor.isSouthExist())
         {
@@ -88,10 +91,11 @@ public class PlayerV2
         }
         else 
         {
-            System.out.println("Error invalid move.");
+            System.out.println((char) 27 + "[31mError invalid move.");
+            boundary.playerInput(floor);
         }
     }
-    public void m_West(FloorV2 floor)
+    public void m_West(FloorV2 floor, Boundary boundary)
     {
         if(floor.isWestExist())
         {
@@ -100,7 +104,8 @@ public class PlayerV2
         }
         else 
         {
-            System.out.println("Error invalid move.");
+            System.out.println((char) 27 + "[31mError invalid move.");
+            boundary.playerInput(floor);
         }
     }
 }

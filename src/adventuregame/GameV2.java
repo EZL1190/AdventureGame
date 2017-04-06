@@ -12,6 +12,7 @@ public class GameV2
     
     public void start()
     {
+        player.setSpell(new Spell("Fire ball", 8, 3));
         boundary.setPlayer(player);
         boundary.setGame(this);
         instantiateFloors();
@@ -31,7 +32,7 @@ public class GameV2
                     gameRunning = false;
                     continue;
                 }
-                //boundary.drop(floor.getEnemy(), player);
+                boundary.drop(floor.getEnemy(), player);
                 floor.setEnemy(null);
             }
             boundary.loot(floor, player);
@@ -57,6 +58,8 @@ public class GameV2
                 + "The room is grey, with multiple pieces of art around the walls the furniture is covered in white sheets to protect their value. "
         ));
         floors.get("0.1").setEnemy(new Enemy().spawnEnemy());
+        floors.get("0.1").getEnemy().setLoot(new Loot().setLoot(100));
+        floors.get("0.1").getEnemy().setLoot(new Loot().setLoot(new WeaponV2("Sword Of Zelda", 100)));
         
         floors.put("1.1", new FloorV2(15, 1, 1, false, true, false, false,
                 "Name: Watchmaker Hummels’ chamber\n"

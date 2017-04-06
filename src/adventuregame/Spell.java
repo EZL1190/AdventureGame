@@ -7,7 +7,7 @@ public class Spell {
     int cd;
     int cdCount;
     
-    Spell(String name, int dmg, int cd, int cdcount)
+    Spell(String name, int dmg, int cd)
     {
         this.name = name;
         this.dmg = dmg;
@@ -20,5 +20,7 @@ public class Spell {
     public int getDmg(){return dmg;}
     public int getCd(){return cd;}
     public int getCdCount(){return cdCount;}
+    
+    public void setCdCount(int cdCount){this.cdCount = cdCount;}
     
 }
