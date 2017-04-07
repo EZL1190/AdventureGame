@@ -48,13 +48,12 @@ public class Game //Ronnie er sej
     }
     
     public void instantiateFloors()
-    {
-        floors.put("0.0", new Floor(0, 0, 0, true, false, false, false,
+    {floors.put("0.0", new Floor(0, 0, 0, true, false, false, false,
         "Name: Start room\n"
         + "You’re standing in a bright hallway, and the door behind you just closed.\n"
         + "You’ve tried to open it, but it’s stuck. There’s only one thing to do, you must proceed forward.\n"
         + "Unless you’re a pussy, then there’s a vent up to the left, just type ‘quit’ and get out of this badass dungeon.\n"
-        + "If you at any point need help, try the help command 'help'"
+                + "If you at any point need help, try the help command 'help'"
         ));
 
         floors.put("-2.1", new Floor(20, -2, 1, true, false, true, false,
@@ -65,7 +64,6 @@ public class Game //Ronnie er sej
                 + "What remains of his shop is guarded by those enemies who ruined his beautiful shop.\n"
                 + "The smell is strong, all the different spices combining to make an odor so strong that only Zombies would be able to survive in here." 
         ));
-        floors.get("-2.1").setWeapon(new Weapon("Rusty5", 3, false, 0, "", 0, 0, false));
 
         floors.put("-1.1", new Floor(0, -1, 1, false, true, true, false,
                 "Name: Ham room\n"
@@ -74,15 +72,12 @@ public class Game //Ronnie er sej
                 + "As you could imagine there’s no valuables in here, you should consider getting out real fast.\n"
                 + "There’s said to be a curse in this room that might change the way you look."
         ));
-        floors.get("-1.1").setWeapon(new Weapon("Rusty2", 3, false, 0, "", 0, 0, false));
 
         floors.put("0.1", new Floor(5, 0, 1, true, true, true, false,
                 "Name: Lord von Apache’s treasure room\n"
                 + "This is the room of Lord von Apache, what you see here is the remains of him, there wasn’t a lot but it’s a start.\n"
                 + "The room is grey, with multiple pieces of art around the walls the furniture is covered in white sheets to protect their value. "
         ));
-        floors.get("0.1").setWeapon(new Weapon("Rusty3", 3, false, 0, "", 0, 0, false));
-        floors.get("0.1").setEnemy(new Enemy().makeEnemy(50, 1, "Von", "boss"));
 
         floors.put("1.1", new Floor(15, 1, 1, true, true, false, false,
                 "Name: Watchmaker Hummels’ chamber\n"
@@ -100,7 +95,6 @@ public class Game //Ronnie er sej
                 + "Because of their non-stop hard work, these students have become Zombies with an unfulfilled hunger for study points.\n"
                 + "You must give them their well-earned study points, to make it out of this maze." 
         ));
-        floors.get("-2.2").setWeapon(new Weapon("Rusty4", 3, false, 0, "", 0, 0, false));
 
         floors.put("-1.2", new Floor(13, -1, 2, false, true, false, false,
                 "Name: The yard of knowledge\n"
@@ -109,7 +103,6 @@ public class Game //Ronnie er sej
                 + "At least that’s what they tell us, you could also just have fun and use the power in whatever way you find appropriate…\n"
                 + "Whatever you want to do."
         ));
-        floors.get("-1.2").setWeapon(new Weapon("Rusty4", 3, false, 0, "", 0, 0, false));
 
         floors.put("0.2", new Floor(50, 0, 2, true, false, true, true,
                 "Name: The hiding closet of Lucas Kuhn\n" 
