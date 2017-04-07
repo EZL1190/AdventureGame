@@ -1,6 +1,6 @@
 package adventuregame;
 
-public class PlayerV2 
+public class Player 
 {
     private int hp;
     private int maxHp;
@@ -12,17 +12,17 @@ public class PlayerV2
     private int yPosition;
     private String position = "0.0";
     private Inventory inventory = new Inventory();
-    private WeaponV2 weapon;
+    private Weapon weapon;
     private Spell spell;
     
-    PlayerV2(int hp, int maxHp, int dmg)
+    Player(int hp, int maxHp, int dmg)
     {
         this.hp = hp;
         this.maxHp = maxHp;
         this.dmg = dmg;
     }
     
-    public void setWeapon(WeaponV2 weapon){this.weapon = weapon;}
+    public void setWeapon(Weapon weapon){this.weapon = weapon;}
     public void setName(String name){this.name = name;}
     public void setHp(int hp){this.hp = hp;}
     public void setGold(int gold){this.gold = gold;}
@@ -32,7 +32,7 @@ public class PlayerV2
     public int getHp(){return hp;}
     public int getDmg(){return dmg;}
     public int getGold(){return gold;}
-    public WeaponV2 getWeapon(){return weapon;}
+    public Weapon getWeapon(){return weapon;}
     public String getName(){return name;}
     public Inventory getInventory(){return inventory;}
     public String getPosition(){return position;}
@@ -40,7 +40,7 @@ public class PlayerV2
     
     public void addToMaxGold(int maxGold){this.maxGold = maxGold;}
     
-    public void equpipWeapon(WeaponV2 weapon)
+    public void equpipWeapon(Weapon weapon)
     {
         if(weapon != null)
         {
@@ -59,7 +59,7 @@ public class PlayerV2
         }
     }
     
-    public void m_North(FloorV2 floor, Boundary boundary)
+    public void m_North(Floor floor, Boundary boundary)
     {
         if(floor.isNorthExist())
         {
@@ -72,7 +72,7 @@ public class PlayerV2
             boundary.playerInput(floor);
         }
     }
-    public void m_East(FloorV2 floor, Boundary boundary)
+    public void m_East(Floor floor, Boundary boundary)
     {
         if(floor.isEastExist())
         {
@@ -85,7 +85,7 @@ public class PlayerV2
             boundary.playerInput(floor);
         }
     }
-    public void m_South(FloorV2 floor, Boundary boundary)
+    public void m_South(Floor floor, Boundary boundary)
     {
         if(floor.isSouthExist())
         {
@@ -98,7 +98,7 @@ public class PlayerV2
             boundary.playerInput(floor);
         }
     }
-    public void m_West(FloorV2 floor, Boundary boundary)
+    public void m_West(Floor floor, Boundary boundary)
     {
         if(floor.isWestExist())
         {

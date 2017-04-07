@@ -2,13 +2,13 @@ package adventuregame;
 
 import java.util.Random;
 
-public class CombatV2 {
+public class Combat {
     
     private Boundary boundary;
     
-    public CombatV2(Boundary boundary){this.boundary = boundary;}
+    public Combat(Boundary boundary){this.boundary = boundary;}
     
-    public void firstHit(PlayerV2 player, Boundary boundary)
+    public void firstHit(Player player, Boundary boundary)
     {
         Random rand = new Random();
         int firsthit = rand.nextInt(100)+1;
@@ -20,7 +20,7 @@ public class CombatV2 {
         }
     }
     
-    public void fight(PlayerV2 player, Enemy enemy, boolean spell)
+    public void fight(Player player, Enemy enemy, boolean spell)
     {
         if(player.getSpell().getCdCount() > 0)
             player.getSpell().setCdCount(player.getSpell().getCdCount()-1);
@@ -44,7 +44,7 @@ public class CombatV2 {
     }
     
     
-    public void playerAttack(PlayerV2 player, Enemy enemy, boolean spell)
+    public void playerAttack(Player player, Enemy enemy, boolean spell)
     {
         if(!spell)
         {
@@ -58,7 +58,7 @@ public class CombatV2 {
         }
     }
     
-    public void enemyAttack(PlayerV2 player, Enemy enemy)
+    public void enemyAttack(Player player, Enemy enemy)
     {
         player.setHp(player.getHp()-enemy.getDamage()); 
         boundary.fight(enemy.getDamage(), false, player.getHp());
