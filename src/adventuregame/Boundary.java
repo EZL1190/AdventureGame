@@ -88,7 +88,7 @@ public class Boundary
             pickup(enemy.getLoot().getWeapon());
         }
         if(enemy.getLoot().getItem()!= null){}
-        if(enemy.getLoot().getPotion() != null){}
+        if(enemy.getLoot().getPotion() != null){ enemy.getLoot().getPotion().pickUp(player);}
         if(enemy.getLoot().getGold() != 0)
         {
             player.setGold(player.getGold() + enemy.getLoot().getGold());
@@ -140,6 +140,7 @@ public class Boundary
                 break;
                 
             case "pickup": case "p":
+                System.out.println("-.-.-.-.-");
                 pickup(floor);
                 playerInput(floor);
                 break;
@@ -210,8 +211,9 @@ public class Boundary
         }
     }
     
-    void pickup(Floor floor)
+    public void pickup(Floor floor)
     {
+        System.out.println("-----");
         if(floor.hasWeapon())
         {
             if(player.getWeapon() == null)
@@ -265,10 +267,10 @@ public class Boundary
             }
         }
         if(floor.getItem() != null){}
-        if(floor.getPotion() != null){}
+        if(floor.getPotion() != null){floor.getPotion().pickUp(player);}
     }
     
-    void pickup(Weapon weapon)
+    public void pickup(Weapon weapon)
     {
         if(player.getWeapon() == null)
         {

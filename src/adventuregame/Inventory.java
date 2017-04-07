@@ -99,8 +99,11 @@ public class Inventory {
 
     public void addPotion(Potion potion) 
     {
-        this.potions[potionCount] = potion;
-        potionCount++;
+        if(!maxPotions())
+        {
+            this.potions[potionCount] = potion;
+            potionCount++;
+        }
     }
     
     public String showInventory()

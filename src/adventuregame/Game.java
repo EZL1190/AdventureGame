@@ -48,13 +48,15 @@ public class Game //Ronnie er sej
     }
     
     public void instantiateFloors()
-    {floors.put("0.0", new Floor(0, 0, 0, true, false, false, false,
+    {
+        floors.put("0.0", new Floor(0, 0, 0, true, false, false, false,
         "Name: Start room\n"
         + "You’re standing in a bright hallway, and the door behind you just closed.\n"
         + "You’ve tried to open it, but it’s stuck. There’s only one thing to do, you must proceed forward.\n"
         + "Unless you’re a pussy, then there’s a vent up to the left, just type ‘quit’ and get out of this badass dungeon.\n"
                 + "If you at any point need help, try the help command 'help'"
         ));
+        floors.get("0.0").setPotion(new Potion("Potion", 50));
 
         floors.put("-2.1", new Floor(20, -2, 1, true, false, true, false,
 
