@@ -41,6 +41,8 @@ public class Boundary
                 else{combat.fight(player, enemy, true);}
                 break;
             case "3":
+                System.out.println((char) 27 + "[31m2; Invalid move");
+                combat(combat, player, enemy, inventory);
                 break;
         }
     }
