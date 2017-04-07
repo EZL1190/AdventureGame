@@ -2,7 +2,7 @@ package adventuregame;
 
 import java.util.HashMap;
 
-public class Game 
+public class Game //Ronnie er sej
 {
     private boolean gameRunning = true;
     private HashMap<String, Floor> floors = new HashMap<String, Floor>();
