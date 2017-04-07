@@ -64,6 +64,9 @@ public class Game //Ronnie er sej
                 + "What remains of his shop is guarded by those enemies who ruined his beautiful shop.\n"
                 + "The smell is strong, all the different spices combining to make an odor so strong that only Zombies would be able to survive in here." 
         ));
+        floors.get("-2.1").setEnemy(new Enemy().makeEnemy(15, 5, "Asian Tourist", "Yellow"));
+        floors.get("-2.1").getEnemy().setLoot(new Loot().setLoot(new Weapon("Scytche of Darweaver Syth", 15)));
+        
 
         floors.put("-1.1", new Floor(0, -1, 1, false, true, true, false,
                 "Name: Ham room\n"
@@ -72,6 +75,7 @@ public class Game //Ronnie er sej
                 + "As you could imagine there’s no valuables in here, you should consider getting out real fast.\n"
                 + "There’s said to be a curse in this room that might change the way you look."
         ));
+        floors.get("-1.1").setEnemy(new Enemy().makeEnemy(10, 15, "Ham God", "Pig"));
 
         floors.put("0.1", new Floor(5, 0, 1, true, true, true, false,
                 "Name: Lord von Apache’s treasure room\n"
@@ -95,6 +99,8 @@ public class Game //Ronnie er sej
                 + "Because of their non-stop hard work, these students have become Zombies with an unfulfilled hunger for study points.\n"
                 + "You must give them their well-earned study points, to make it out of this maze." 
         ));
+        floors.get("-2.2").setEnemy(new Enemy().makeEnemy(38, 15, "Matelias", "Nerdl0rd"));
+        
 
         floors.put("-1.2", new Floor(13, -1, 2, false, true, false, false,
                 "Name: The yard of knowledge\n"
@@ -124,6 +130,8 @@ public class Game //Ronnie er sej
                 + "You hear the sound of an instrument starting to play, a piano to be exact.\n"
                 + "This place doesn’t seem to have any valuables, except that small gold bar over there, quickly grab it!"
         ));
+        floors.get("1.2").setEnemy(new Enemy().makeEnemy(10, 5, "Spopkie Dookie", "Ghost"));
+        
 
         floors.put("-2.3", new Floor(100, -2, 3, false, false, true, true,
 
@@ -143,6 +151,8 @@ public class Game //Ronnie er sej
                 + "You say no thanks but ask them if they have some spare change for hungry traveler.\n"
                 + "Out of context they drop some sweet bars “Raindrops, drop tops”, you leave the room all confused and light headed."
         ));
+        floors.get("-1.3").setEnemy(new Enemy().makeEnemy(45, 25, "Raindrops", "Drop tops"));
+        floors.get("-1.3").getEnemy().setLoot(new Loot().setLoot(new Weapon("Rod of Spliffs", 25)));
 
         floors.put("0.3", new Floor(69, 0, 3, false, true, false, true,
                 "Name: The blacksmiths forgery\n"
@@ -154,6 +164,8 @@ public class Game //Ronnie er sej
                 + "The real value of the sword is unknown, but maybe it’s worth a shot visiting the nice shopkeeper?\n" +
                 "Hint: It is… Go there right now."
         ));
+        floors.get("0.3").setEnemy(new Enemy().makeEnemy(10, 1, "Slimey", "Slime"));
+        floors.get("0.3").getEnemy().setLoot(new Loot().setLoot(new Weapon("Sword Of TAG", 10)));
 
         floors.put("1.3", new Floor(12, 1, 3, true, false, false, true,
 
@@ -170,6 +182,7 @@ public class Game //Ronnie er sej
                 + "Sounds like amazing graze doesn’t it? Anyhow, you’ve been rewarded for your endurance and great spirit.\n"
                 + "We would like to give you some kind of token of appreciation, but all we got is gold so here you go."
         ));
+        
 
         floors.put("-1.4", new Floor(420, -1, 4, false, true, true, false,
 
@@ -178,7 +191,7 @@ public class Game //Ronnie er sej
                 + "Before Sindragosa will even look upon your weak body, you must defeat her goblin servants first.\n"
                 + "The easiest way to kill them is to use an AoE attack, sadly this game isn’t in that stage yet, so you’ll have to take them out one by one. "
         ));
-        floors.get("-1.4").setEnemy(new Enemy().makeEnemy(200, 10, "Meme King", "Meme"));
+        floors.get("-1.4").setEnemy(new Enemy().makeEnemy(200, 25, "Sindragosa", "Frost Wyrm"));
         floors.get("-1.4").getEnemy().setLoot(new Loot().setLoot(10000));
         
         
@@ -196,8 +209,8 @@ public class Game //Ronnie er sej
                 + "We’re now in her home, look at all these cats, she must be a little lonely huh?\n" 
                 + "Wait, what the hell is that over there? Is that one of Lucas Kuhn’s tools!" 
         ));
-        floors.get("1.4").setEnemy(new Enemy().makeEnemy(20, 5, "WeekAss Zelda", "Game"));
-        floors.get("1.4").getEnemy().setLoot(new Loot().setLoot(new Weapon("Sword Of Zelda", 100)));
+        floors.get("1.4").setEnemy(new Enemy().makeEnemy(20, 5, "Odin", "God"));
+        floors.get("1.4").getEnemy().setLoot(new Loot().setLoot(new Weapon("Mjolnir", 75)));
     }
     
     public void setGameRunning(Boolean gameRunning){this.gameRunning = gameRunning;}
