@@ -55,4 +55,15 @@ public class Highscore {
         Collections.reverse(getHighScores());
 
     }
+    
+    @Override
+    public String toString(){
+        String s = "";
+        for (int i = 0; i<getHighScores().size(); i++){
+            s = "" + getHighScores().get(i) + "\n";
+            
+        }
+        return s;
+        
+    }
 }
