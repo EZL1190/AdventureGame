@@ -12,7 +12,7 @@ import java.io.IOException;
 
 /**
  *
- * @author Shxnna
+ * @author Shxnna/Gay
  */
 public class Highscore {
     public void Highscore(Player player){
