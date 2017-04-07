@@ -6,6 +6,7 @@ public class PlayerV2
     private int maxHp;
     private int dmg;
     private int gold = 0;
+    private int maxGold = 0;
     private String name;
     private int xPosition;
     private int yPosition;
@@ -36,6 +37,8 @@ public class PlayerV2
     public Inventory getInventory(){return inventory;}
     public String getPosition(){return position;}
     public Spell getSpell(){return spell;}
+    
+    public void addToMaxGold(int maxGold){this.maxGold = maxGold;}
     
     public void equpipWeapon(WeaponV2 weapon)
     {

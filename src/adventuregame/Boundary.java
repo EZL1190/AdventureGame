@@ -90,6 +90,7 @@ public class Boundary
         if(enemy.getLoot().getGold() != 0)
         {
             player.setGold(player.getGold() + enemy.getLoot().getGold());
+            player.addToMaxGold(enemy.getLoot().getGold());
             System.out.println("Enemey droped " + enemy.getLoot().getGold() + " gold");
         }
     }
@@ -97,6 +98,7 @@ public class Boundary
     public void loot(FloorV2 floor, PlayerV2 player) {
         System.out.println("\nYou have looted " + floor.getGold() + " gold from this room");
         int gold = floor.getGold() + player.getGold();
+        player.addToMaxGold(floor.getGold());
         floor.lootFloor(player);
         System.out.println("You have " + gold + " gold in total\n");
     }
