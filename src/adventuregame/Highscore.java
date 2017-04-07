@@ -27,24 +27,30 @@ public class Highscore {
     public static void addScore(String name, int score) {
         try (PrintWriter out = new PrintWriter(new FileWriter(H_FILE, true))) {
             out.println(name + ": " + score);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
 
         }
     }
 
-    public static ArrayList<String> getHighScores() throws FileNotFoundException {
+    public static ArrayList<String> getHighScores() {
         try (Scanner in = new Scanner(new FileReader(H_FILE))) {
             ArrayList<String> list = new ArrayList<>();
             while (in.hasNext()) {
                 String line = in.nextLine();
                 list.add(line + "\n");
-
             }
+            return list;
+        } catch (IOException ex) {
+            if (true) {
+                ex.printStackTrace();
+            }
+            System.exit(1);
+            return null; // Unreachable
         }
     }
 
-    public void sortScores() {
+    public void sortScores() throws FileNotFoundException {
         Collections.sort(getHighScores());
         Collections.reverse(getHighScores());
 
