@@ -2,13 +2,13 @@ package adventuregame;
 
 import java.util.HashMap;
 
-public class GameV2 
+public class Game 
 {
     private boolean gameRunning = true;
-    private HashMap<String, FloorV2> floors = new HashMap<String, FloorV2>();
-    private PlayerV2 player = new PlayerV2(100, 100, 2);
+    private HashMap<String, Floor> floors = new HashMap<String, Floor>();
+    private Player player = new Player(100, 100, 2);
     private Boundary boundary = new Boundary();
-    private CombatV2 combat = new CombatV2(boundary);
+    private Combat combat = new Combat(boundary);
     
     public void start()
     {
@@ -18,7 +18,7 @@ public class GameV2
         instantiateFloors();
         while(gameRunning)
         {
-            FloorV2 floor = floors.get(player.getPosition());
+            Floor floor = floors.get(player.getPosition());
             boundary.floorDescription(floor);
             // if(player.getPosition().equals("")){//sout("win game") gameRunning = false, continue;}
             if(player.getPosition().equals("-2.4"))
@@ -49,7 +49,7 @@ public class GameV2
     
     public void instantiateFloors()
     {
-        floors.put("0.0", new FloorV2(0, 0, 0, true, false, false, false,
+        floors.put("0.0", new Floor(0, 0, 0, true, false, false, false,
         "Name: Start room\n"
         + "You’re standing in a bright hallway, and the door behind you just closed.\n"
         + "You’ve tried to open it, but it’s stuck. There’s only one thing to do, you must proceed forward.\n"
@@ -57,7 +57,7 @@ public class GameV2
                 + "If you at any point need help, try the help command 'help'"
         ));
 
-        floors.put("-2.1", new FloorV2(20, -2, 1, true, false, true, false,
+        floors.put("-2.1", new Floor(20, -2, 1, true, false, true, false,
 
                 "Name: MingLee’s Asian Supermarket\n" 
                 + "You’ve entered the infamous MingLee’s supermarket, this place was filled with delicious specialties from the Asian culture.\n"
@@ -66,7 +66,7 @@ public class GameV2
                 + "The smell is strong, all the different spices combining to make an odor so strong that only Zombies would be able to survive in here." 
         ));
 
-        floors.put("-1.1", new FloorV2(0, -1, 1, false, true, true, false,
+        floors.put("-1.1", new Floor(0, -1, 1, false, true, true, false,
                 "Name: Ham room\n"
                 + "The room you just entered is freezing cold and there’s a weird smell. The floor is wet and the walls are covered in blue tiles.\n"
                 + "As you stare out in the freezing room you see pieces of ham lying around on the floor, that explains the smell and the wet floor.\n"
@@ -74,13 +74,13 @@ public class GameV2
                 + "There’s said to be a curse in this room that might change the way you look."
         ));
 
-        floors.put("0.1", new FloorV2(5, 0, 1, true, true, true, false,
+        floors.put("0.1", new Floor(5, 0, 1, true, true, true, false,
                 "Name: Lord von Apache’s treasure room\n"
                 + "This is the room of Lord von Apache, what you see here is the remains of him, there wasn’t a lot but it’s a start.\n"
                 + "The room is grey, with multiple pieces of art around the walls the furniture is covered in white sheets to protect their value. "
         ));
 
-        floors.put("1.1", new FloorV2(15, 1, 1, true, true, false, false,
+        floors.put("1.1", new Floor(15, 1, 1, true, true, false, false,
                 "Name: Watchmaker Hummels’ chamber\n"
                 + "The door is heavy and you’re pushing it with all you’ve got, the door is old and making a lot of noise.\n"
                 + "You’ve finally managed to force the door open, as you go in the door shuts loudly behind you.\n"
@@ -88,7 +88,7 @@ public class GameV2
                 + "He’s pointing towards the lamp in the left corner of the room. You decide to check the lamp and find a bunch of coins. "
         ));
 
-        floors.put("-2.2", new FloorV2(45, -2, 2, true, false, false, true,
+        floors.put("-2.2", new Floor(45, -2, 2, true, false, false, true,
 
                 "Name: The programmer’s bungalow\n" 
                 + "You’ve entered the room of the most hardworking coders in this universe, these two incredible programmers have been working all week to accomplish the almighty creators wicked ideas.\n"
@@ -97,7 +97,7 @@ public class GameV2
                 + "You must give them their well-earned study points, to make it out of this maze." 
         ));
 
-        floors.put("-1.2", new FloorV2(13, -1, 2, false, true, false, false,
+        floors.put("-1.2", new Floor(13, -1, 2, false, true, false, false,
                 "Name: The yard of knowledge\n"
                 + "You’ve found your way outside, you’re now standing in the yard of knowledge, it says that this yard contains all the knowledge of senpai Ronnie.\n"
                 + "Some of the artifacts in this yard contains great power, but with great power comes great responsibility…\n"
@@ -105,7 +105,7 @@ public class GameV2
                 + "Whatever you want to do."
         ));
 
-        floors.put("0.2", new FloorV2(50, 0, 2, true, false, true, true,
+        floors.put("0.2", new Floor(50, 0, 2, true, false, true, true,
                 "Name: The hiding closet of Lucas Kuhn\n" 
                 + "Go back, hurry it’s a trap. Nah man just kidding, it’s safe in here… Trust me.\n"
                 + "You’re scared now aren’t you?\n" 
@@ -115,7 +115,7 @@ public class GameV2
                 + "This closet has secret exits, try and find your way out before the maniac Kuhn gets back."
         ));
 
-        floors.put("1.2", new FloorV2(7, 1, 2, true, true, false, true,
+        floors.put("1.2", new Floor(7, 1, 2, true, true, false, true,
                 "Name: Hall of ghosts\n" 
                 + "You’ve entered a hall which is completely dark, you’re fumbling your way through the hall and stumbling across some sharp edges, what could this be?\n"
                 + "You decide to back away from the edges, there’s a solid structure behind you.\n"
@@ -126,7 +126,7 @@ public class GameV2
                 + "This place doesn’t seem to have any valuables, except that small gold bar over there, quickly grab it!"
         ));
 
-        floors.put("-2.3", new FloorV2(100, -2, 3, false, false, true, true,
+        floors.put("-2.3", new Floor(100, -2, 3, false, false, true, true,
 
                 "Name:  The Vosserfall \n" 
                 + "Would you look at that! It’s the Vosserfall, the world’s largest waterfall, named after the legend himself, the almighty creator of this universe.\n"
@@ -135,7 +135,7 @@ public class GameV2
                 + "The beautiful environment has cleansed your soul and regained all your lost stats." 
         ));
 
-        floors.put("-1.3", new FloorV2(25, -1, 3, false, true, true, true,
+        floors.put("-1.3", new Floor(25, -1, 3, false, true, true, true,
                 "Name: The room of Migos\n"
                 + "There’s a tune playing, the room is filled with smoke. The rhythm is bad, some might even say boujee.\n"
                 + "You feel dizzy, the smoke is getting to you, this might not be regular smoke.\n"
@@ -145,7 +145,7 @@ public class GameV2
                 + "Out of context they drop some sweet bars “Raindrops, drop tops”, you leave the room all confused and light headed."
         ));
 
-        floors.put("0.3", new FloorV2(69, 0, 3, false, true, false, true,
+        floors.put("0.3", new Floor(69, 0, 3, false, true, false, true,
                 "Name: The blacksmiths forgery\n"
                 + "This is the forgery of an old blacksmith, his origin remains unknown but he was a hard working fella.\n"
                 + "The room has a nice temperature, heated, maybe there has been someone in here recently.\n"
@@ -156,7 +156,7 @@ public class GameV2
                 "Hint: It is… Go there right now."
         ));
 
-        floors.put("1.3", new FloorV2(12, 1, 3, true, false, false, true,
+        floors.put("1.3", new Floor(12, 1, 3, true, false, false, true,
 
                 "Name: Childhood home\n" 
                 + "In some weird way, you’ve ended up in your childhood home, this place is filled with memories.\n"
@@ -165,14 +165,14 @@ public class GameV2
                 "Got it? Nice, let’s move along. " 
         ));
 
-        floors.put("-2.4", new FloorV2(1337, -2, 4, false, false, false, false,
+        floors.put("-2.4", new Floor(1337, -2, 4, false, false, false, false,
                 "Name: The great hall of memes\n"
                 + "Congratulations dear traveler, you’ve now made your way to the end of this amazing maze..\n"
                 + "Sounds like amazing graze doesn’t it? Anyhow, you’ve been rewarded for your endurance and great spirit.\n"
                 + "We would like to give you some kind of token of appreciation, but all we got is gold so here you go."
         ));
 
-        floors.put("-1.4", new FloorV2(420, -1, 4, false, true, true, false,
+        floors.put("-1.4", new Floor(420, -1, 4, false, true, true, false,
 
                 "Name: Sindragosa’s lair \n" 
                 + "It seems like you’ve entered the lair of Sindragosa, Sindragosa is a mighty frost wyrm who once ruled the world. \n"
@@ -183,14 +183,14 @@ public class GameV2
         floors.get("-1.4").getEnemy().setLoot(new Loot().setLoot(10000));
         
         
-        floors.put("0.4", new FloorV2(47, 0, 4, false, true, true, false,
+        floors.put("0.4", new Floor(47, 0, 4, false, true, true, false,
 
                 "Name: Lord von Apache’s kitchen\n"
                 + "You’ve discovered another location of Lord von Apache! This is said to be his ‘kitchen’ or armory, whatever you prefer.\n"
                 + "You might be able to find some equipment that will become handy within the next few moves. ‘Spoiler alert!’ " 
         ));
         
-        floors.put("1.4", new FloorV2(0, 1, 4, false, true, false, true,
+        floors.put("1.4", new Floor(0, 1, 4, false, true, false, true,
 
                 "Name: The home of your middle school teacher\n" 
                 + "Remember that teacher you had a crush on in middle school? \n" 
@@ -198,7 +198,7 @@ public class GameV2
                 + "Wait, what the hell is that over there? Is that one of Lucas Kuhn’s tools!" 
         ));
         floors.get("1.4").setEnemy(new Enemy().makeEnemy(20, 5, "WeekAss Zelda", "Game"));
-        floors.get("1.4").getEnemy().setLoot(new Loot().setLoot(new WeaponV2("Sword Of Zelda", 100)));
+        floors.get("1.4").getEnemy().setLoot(new Loot().setLoot(new Weapon("Sword Of Zelda", 100)));
     }
     
     public void setGameRunning(Boolean gameRunning){this.gameRunning = gameRunning;}

@@ -11,7 +11,7 @@ package adventuregame;
  */
 public interface ItemsInferface {
     
-    public void pickUp(PlayerV2 player);
+    public void pickUp(Player player);
     public String getName();
     
 }

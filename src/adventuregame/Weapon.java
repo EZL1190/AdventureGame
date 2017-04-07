@@ -1,10 +1,10 @@
 package adventuregame;
 
-public class WeaponV2 implements ItemsInferface{
+public class Weapon implements ItemsInferface{
     private String name;
     private int dmg;
     
-    WeaponV2(String name, int dmg)
+    Weapon(String name, int dmg)
     {
         this.name = name;
         this.dmg = dmg;
@@ -12,5 +12,5 @@ public class WeaponV2 implements ItemsInferface{
     public String getName(){return name;}
     public int getDmg(){return dmg;}
     
-    public void pickUp(PlayerV2 player){player.getInventory().addWeapon(this);}
+    public void pickUp(Player player){player.getInventory().addWeapon(this);}
 }

@@ -1,6 +1,6 @@
 package adventuregame;
 
-public class FloorV2 
+public class Floor 
 {
 
     private int gold;
@@ -12,12 +12,12 @@ public class FloorV2
     private boolean southExist;
     private String description;
     private Enemy enemy = null;
-    private WeaponV2 weapon = null;
+    private Weapon weapon = null;
     private Item item = null;
     private Potion potion = null;
     private Loot loot;
     
-    FloorV2(int gold, int x, int y, boolean northExist, boolean westExist, boolean eastExist, boolean southExist, String description)
+    Floor(int gold, int x, int y, boolean northExist, boolean westExist, boolean eastExist, boolean southExist, String description)
     {
         this.gold = gold;
         this.x = x;
@@ -31,14 +31,14 @@ public class FloorV2
     
     public void setEnemy(Enemy enemy){this.enemy = enemy;}
     public void setLoot(Loot loot){this.loot = loot;}
-    public void setWeapon(WeaponV2 weapon){this.weapon = weapon;}
+    public void setWeapon(Weapon weapon){this.weapon = weapon;}
     public void setItem(Item item){this.item = item;}
     public void setPotion(Potion potion){this.potion = potion;}
     
     public Enemy getEnemy(){return enemy;}
     public String getDescription(){return description;}
     public int getGold(){return gold;}
-    public WeaponV2 getWeapon(){return weapon;}
+    public Weapon getWeapon(){return weapon;}
     public Item getItem(){return item;}
     public Potion getPotion(){return potion;}
     
@@ -49,7 +49,7 @@ public class FloorV2
     
     public boolean hasWeapon(){return weapon != null;}
     
-    public void lootFloor(PlayerV2 player)
+    public void lootFloor(Player player)
     {
         player.setGold(gold + player.getGold());
         gold = 0;

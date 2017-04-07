@@ -10,7 +10,7 @@ public class Item implements ItemsInferface
     }
 
     @Override
-    public void pickUp(PlayerV2 player) 
+    public void pickUp(Player player) 
     {
         player.getInventory().addItem(this);
     }
@@ -21,7 +21,7 @@ public class Item implements ItemsInferface
         return"";
     }
     
-    public void useItem(String name, GameV2 game)
+    public void useItem(String name, Game game)
     {
         switch(name)
         {

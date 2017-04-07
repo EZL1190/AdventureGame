@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 public class Boundary 
 {
-    private PlayerV2 player;
-    private GameV2 game;
+    private Player player;
+    private Game game;
     private Scanner userInput = new Scanner(System.in);
     
-    public void setPlayer(PlayerV2 player){this.player = player;}
-    public void setGame(GameV2 game){this.game = game;}
-    public void floorDescription(FloorV2 floor){System.out.println(floor.getDescription());}
+    public void setPlayer(Player player){this.player = player;}
+    public void setGame(Game game){this.game = game;}
+    public void floorDescription(Floor floor){System.out.println(floor.getDescription());}
     public void firstHit(){System.out.println("\nYou where hit by a surprise attack, and took 10 dmg");}
-    public void combatStart(Enemy enemy, PlayerV2 player) 
+    public void combatStart(Enemy enemy, Player player) 
     {
         System.out.println("\nYou've engaged an enemy!");
         System.out.println((char) 27 + "[31mEnemy"+(char) 27 + "[30m type: "+enemy.getName());
@@ -22,7 +22,7 @@ public class Boundary
         System.out.println("What would you like to do?");
     }
     
-    public void combat(CombatV2 combat, PlayerV2 player, Enemy enemy, Inventory inventory) 
+    public void combat(Combat combat, Player player, Enemy enemy, Inventory inventory) 
     {
         combatChoice(player);
         String input = userInput.nextLine();
@@ -47,7 +47,7 @@ public class Boundary
         }
     }
     
-    public void combatChoice(PlayerV2 player)
+    public void combatChoice(Player player)
     {
         System.out.println("");   
         System.out.println((char) 27 + "[32m1; Attack! - " + player.getDmg() + " dmg");
@@ -81,7 +81,7 @@ public class Boundary
     public void wonFight(){System.out.println("You won the fight");}
     public void gameOver(){System.out.println("\nYou lost gameover");}
     
-    public void drop(Enemy enemy, PlayerV2 player)
+    public void drop(Enemy enemy, Player player)
     {
         if(enemy.getLoot().getWeapon()!= null)
         {
@@ -97,7 +97,7 @@ public class Boundary
         }
     }
     
-    public void loot(FloorV2 floor, PlayerV2 player) {
+    public void loot(Floor floor, Player player) {
         System.out.println("\nYou have looted " + floor.getGold() + " gold from this room");
         int gold = floor.getGold() + player.getGold();
         player.addToMaxGold(floor.getGold());
@@ -105,7 +105,7 @@ public class Boundary
         System.out.println("You have " + gold + " gold in total\n");
     }
     
-    public void waysToGo(FloorV2 floor) {
+    public void waysToGo(Floor floor) {
         System.out.println("\nYou can go: ");
         if (floor.isNorthExist()) {
             System.out.println((char) 27 + "[32m-North");
@@ -121,13 +121,13 @@ public class Boundary
         }
     }
 
-    public void playerInput(FloorV2 floor) {
+    public void playerInput(Floor floor) {
         System.out.println("\nEnter command: ");
         String input = userInput.nextLine();
         commands(input, floor);
     }
     
-    public void commands(String input, FloorV2 floor) {
+    public void commands(String input, Floor floor) {
         input = input.toLowerCase();
         switch (input) {
             case "changeweapon": case "cw":
@@ -210,7 +210,7 @@ public class Boundary
         }
     }
     
-    void pickup(FloorV2 floor)
+    void pickup(Floor floor)
     {
         if(floor.hasWeapon())
         {
@@ -268,7 +268,7 @@ public class Boundary
         if(floor.getPotion() != null){}
     }
     
-    void pickup(WeaponV2 weapon)
+    void pickup(Weapon weapon)
     {
         if(player.getWeapon() == null)
         {
@@ -326,10 +326,10 @@ public class Boundary
         game.setGameRunning(false);
     }
 
-    public void west(FloorV2 floor){player.m_West(floor, this);}
-    public void east(FloorV2 floor){player.m_East(floor, this);}
-    public void south(FloorV2 floor){player.m_South(floor, this);}
-    public void north(FloorV2 floor){ player.m_North(floor, this);}
+    public void west(Floor floor){player.m_West(floor, this);}
+    public void east(Floor floor){player.m_East(floor, this);}
+    public void south(Floor floor){player.m_South(floor, this);}
+    public void north(Floor floor){ player.m_North(floor, this);}
     public void gold(){ System.out.println((char) 27 + "[33mGold:" + player.getGold());}
     
     public void wonGame()
