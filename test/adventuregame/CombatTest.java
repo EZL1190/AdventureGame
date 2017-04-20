@@ -21,6 +21,8 @@ public class CombatTest {
     private Boundary boundary;
     private Enemy enemy;
     private Combat combat;
+    private CombatJunitTest combatFight;
+    private BoundaryJunitTest boundaryFight;
     
     public CombatTest() {
     }
@@ -36,10 +38,12 @@ public class CombatTest {
     @Before
     public void setUp() {
         player = new Player(50, 50, 4);
-        enemy = new Enemy().makeEnemy(5, 2, "Skeleton", "Skelet");
+        enemy = new Enemy().makeEnemy(6, 5, "Skeleton", "Skelet");
         boundary = new Boundary();
         combat = new Combat(boundary);
         player.setSpell(new Spell("Fire ball", 8, 3));
+        boundaryFight = new BoundaryJunitTest();
+        combatFight = new CombatJunitTest();
     }
     
     @After
@@ -52,10 +56,7 @@ public class CombatTest {
     @Test
     public void testFirstHit() {
         System.out.println("firstHit");
-        Player player = this.player;
-        Boundary boundary = this.boundary;
-        Combat instance = this.combat;
-        instance.firstHit(player, boundary);
+        combat.firstHit(player, boundary);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -69,8 +70,8 @@ public class CombatTest {
         Player player = this.player;
         Enemy enemy = this.enemy;
         boolean spell = false;
-        Combat instance = this.combat;
-        instance.fight(player, enemy, spell);
+        combatFight.fight(player, enemy, spell);
+        assertEquals(45.0, (float) player.getHp(), 0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
