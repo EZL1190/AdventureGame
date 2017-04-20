@@ -36,7 +36,7 @@ public class CombatTest {
     @Before
     public void setUp() {
         player = new Player(50, 50, 4);
-        enemy = new Enemy().spawnEnemy();
+        enemy = new Enemy().makeEnemy(5, 2, "Skeleton", "Skelet");
         boundary = new Boundary();
         combat = new Combat(boundary);
         player.setSpell(new Spell("Fire ball", 8, 3));
