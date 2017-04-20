@@ -338,4 +338,9 @@ public class Boundary
     {
         System.out.println("Won game!!!! text something....!!");
     }
+    
+    public void highscore(Highscore highscore)
+    {
+        System.out.println(highscore.toString());
+    }
 }
