@@ -9,6 +9,7 @@ public class Game //Ronnie er sej
     private Player player = new Player(100, 100, 2);
     private Boundary boundary = new Boundary();
     private Combat combat = new Combat(boundary);
+    private Highscore highscore = new Highscore();
     
     public void start()
     {
@@ -45,6 +46,7 @@ public class Game //Ronnie er sej
             boundary.waysToGo(floor);
             boundary.playerInput(floor);
         }
+        boundary.highscore(highscore);
     }
     
     public void instantiateFloors()
