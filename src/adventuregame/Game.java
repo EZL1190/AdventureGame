@@ -79,7 +79,7 @@ public class Game //Ronnie er sej
                 + "As you could imagine there’s no valuables in here, you should consider getting out real fast.\n"
                 + "There’s said to be a curse in this room that might change the way you look."
         ));
-        floors.get("-1.1").setEnemy(new Enemy().makeEnemy(10, 15, "Ham God", "Pig"));
+        floors.get("-1.1").setEnemy(new Enemy().makeEnemy(10, 10, "Ham God", "Pig"));
         floors.get("-1.1").getEnemy().setLoot(new Loot());
         
         floors.put("0.1", new Floor(5, 0, 1, true, true, true, false,
@@ -104,7 +104,7 @@ public class Game //Ronnie er sej
                 + "Because of their non-stop hard work, these students have become Zombies with an unfulfilled hunger for study points.\n"
                 + "You must give them their well-earned study points, to make it out of this maze." 
         ));
-        floors.get("-2.2").setEnemy(new Enemy().makeEnemy(38, 15, "Matelias", "Nerdl0rd"));
+        floors.get("-2.2").setEnemy(new Enemy().makeEnemy(18, 15, "Matelias", "Nerdl0rd"));
         floors.get("-2.2").getEnemy().setLoot(new Loot());
 
         floors.put("-1.2", new Floor(13, -1, 2, false, true, false, false,
@@ -156,7 +156,7 @@ public class Game //Ronnie er sej
                 + "You say no thanks but ask them if they have some spare change for hungry traveler.\n"
                 + "Out of context they drop some sweet bars “Raindrops, drop tops”, you leave the room all confused and light headed."
         ));
-        floors.get("-1.3").setEnemy(new Enemy().makeEnemy(45, 25, "Raindrops", "Drop tops"));
+        floors.get("-1.3").setEnemy(new Enemy().makeEnemy(45, 15, "Raindrops", "Drop tops"));
         floors.get("-1.3").getEnemy().setLoot(new Loot().setLoot(new Weapon("Rod of Spliffs", 25)));
 
         floors.put("0.3", new Floor(69, 0, 3, false, true, false, true,
@@ -196,7 +196,7 @@ public class Game //Ronnie er sej
                 + "Before Sindragosa will even look upon your weak body, you must defeat her goblin servants first.\n"
                 + "The easiest way to kill them is to use an AoE attack, sadly this game isn’t in that stage yet, so you’ll have to take them out one by one. "
         ));
-        floors.get("-1.4").setEnemy(new Enemy().makeEnemy(200, 25, "Sindragosa", "Frost Wyrm"));
+        floors.get("-1.4").setEnemy(new Enemy().makeEnemy(200, 15, "Sindragosa", "Frost Wyrm"));
         floors.get("-1.4").getEnemy().setLoot(new Loot().setLoot(10000));
         
         
