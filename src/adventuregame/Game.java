@@ -80,7 +80,8 @@ public class Game //Ronnie er sej
                 + "There’s said to be a curse in this room that might change the way you look."
         ));
         floors.get("-1.1").setEnemy(new Enemy().makeEnemy(10, 15, "Ham God", "Pig"));
-
+        floors.get("-1.1").getEnemy().setLoot(new Loot());
+        
         floors.put("0.1", new Floor(5, 0, 1, true, true, true, false,
                 "Name: Lord von Apache’s treasure room\n"
                 + "This is the room of Lord von Apache, what you see here is the remains of him, there wasn’t a lot but it’s a start.\n"
@@ -104,7 +105,7 @@ public class Game //Ronnie er sej
                 + "You must give them their well-earned study points, to make it out of this maze." 
         ));
         floors.get("-2.2").setEnemy(new Enemy().makeEnemy(38, 15, "Matelias", "Nerdl0rd"));
-        
+        floors.get("-2.2").getEnemy().setLoot(new Loot());
 
         floors.put("-1.2", new Floor(13, -1, 2, false, true, false, false,
                 "Name: The yard of knowledge\n"
@@ -135,7 +136,7 @@ public class Game //Ronnie er sej
                 + "This place doesn’t seem to have any valuables, except that small gold bar over there, quickly grab it!"
         ));
         floors.get("1.2").setEnemy(new Enemy().makeEnemy(10, 5, "Spopkie Dookie", "Ghost"));
-        
+        floors.get("1.2").getEnemy().setLoot(new Loot());
 
         floors.put("-2.3", new Floor(100, -2, 3, false, false, true, true,
 
